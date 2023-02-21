@@ -1,0 +1,833 @@
+---
+title: "Collectieve Kracht DKE Onderzoeksrapport"
+output: html_document
+date: "[Fill in the date]"
+---
+
+```{r setup, include=FALSE}
+# NOTE: This code is made available under an MIT license. The code is free to use, but the author of the code will have to be cited for every form of publication that is created with the code. 
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r, include=FALSE}
+library(ggplot2)
+library(rts)
+library(viridis)
+library(dplyr)
+library(ggpubr)
+library(broman)
+library(data.table)
+library(plyr)
+require(foreign)
+require(MASS)
+require(Hmisc)
+require(reshape2)
+require(foreach)
+library(dplyr)  # Data frame manipulation
+library(readr)  # Read CSVs nicely
+library(broom)  # Convert models to data frames
+library(pastecs)
+library(car)
+library(multcomp)
+library(idefix)
+library(mlogit)
+library(Formula)
+library(readxl)
+library(jtools)
+library(ggstance)
+library(broom.mixed)
+library(coefplot)
+library(data.table)
+library(gmnl) 
+library(mlogit)
+library(RColorBrewer)
+library(stargazer)
+library(sf)
+library(rgdal)
+library(CARBayesdata)
+library(CARBayes)
+library(RColorBrewer)
+library(spdep)
+library(coda)
+library(tidyr)
+#library(xlsx)
+library(plotrix)
+library(knitr)
+
+
+
+#-------------------------------------------------------------------------------
+# This code will make an automated report of the results gathered through
+# the DCE Qualtrics survey. Make sure to adjust the date on the top 
+#-------------------------------------------------------------------------------
+
+
+```
+
+
+In dit rapport vindt u de resultaten van het door u aangevraagde en uitgevoerde Discrete Keuze Experiment [DKE]. 
+Het rapport begint met een beschrijvende analyse, waarin de eigenschappen van de mensen die mee hebben gedaan aan dit onderzoek worden beschreven. Vervolgens wordt de analyse van het DKE gepresenteerd, waarin u kunt zien welke organisatie eigenschappen het belangrijkst zijn bevonden door de respondenten. 
+
+Weet u niet meer goed hoe een Discrete Keuze Experiment werkt, of wil u voor het bekijken van de resultaten nog eens precies zien hoe het in elkaar zit? Klik dan [hier](https://erasmusuniversity.eu.qualtrics.com/jfe/form/SV_3IRTV1mDnZnwuMe) voor uitleg!
+
+```{r setup data, include=FALSE}
+# Here load the data that was gathered with the DCE qualtrics link for the citizen collective / applicant.
+q_data.dt = openxlsx::read.xlsx(xlsxFile ="[yourpath]/DKE_data.xlsx")
+
+#-------------------------------------------------------------------------------
+# Create variables 
+#-------------------------------------------------------------------------------
+
+q_data.dt$male = with(q_data.dt,
+                      ifelse(gender == "Man", 1,
+                      ifelse(gender == "Vrouw", 0, NA)))
+
+q_data.dt$income_num = with(q_data.dt,
+                        ifelse(income == "0 - 19.999", 1,
+                        ifelse(income == "20.000 - 39.999", 2, 
+                        ifelse(income == "40.000 - 59.999", 3, 
+                        ifelse(income == "60.000 - 79.999", 4, 
+                        ifelse(income == "80.000 - 99.999", 5,
+                        ifelse(income == "100.000 of meer", 6,
+                        ifelse(income == "Zeg ik liever niet", NA, 0))))))))
+
+
+
+q_data.dt$income1 = with(q_data.dt,
+                         ifelse(income_num == 1, 1, 0))
+q_data.dt$income2 = with(q_data.dt,
+                         ifelse(income_num == 2, 1, 0))
+q_data.dt$income3 = with(q_data.dt,
+                         ifelse(income_num == 3, 1, 0))
+q_data.dt$income4 = with(q_data.dt,
+                         ifelse(income_num == 4, 1, 0))
+q_data.dt$income5 = with(q_data.dt,
+                         ifelse(income_num == 5, 1, 0))
+q_data.dt$income6 = with(q_data.dt,
+                         ifelse(income_num == 6, 1, 0))
+
+q_data.dt$energyuse = with(q_data.dt, 
+                           ifelse(energyuse == "Minder dan 1500 kWh", 1, 
+                           ifelse(energyuse == "1500 - 1999 kWh", 2,
+                           ifelse(energyuse == "2000 - 2499 kWh", 3, 
+                           ifelse(energyuse == "2500 - 2999 kWh", 4,
+                           ifelse(energyuse == "3000 - 3499 kWh", 5, 
+                           ifelse(energyuse == "3500 - 3999 kWh", 6,
+                           ifelse(energyuse == "4000 kWh of meer", 7, NA))))))))
+
+
+q_data.dt$payment_amount = with(q_data.dt,
+                                ifelse(payment_amount == "0 - 50 euro", 1, 
+                                ifelse(payment_amount == "51 - 100 euro", 2, 
+                                ifelse(payment_amount == "101 - 150 euro", 3,
+                                ifelse(payment_amount == "151 - 200 euro", 4, 
+                                ifelse(payment_amount == "201 - 250 euro", 5, 
+                                ifelse(payment_amount == "251 - 300 euro", 6, 
+                                ifelse(payment_amount == "301 - 350 euro", 7, 
+                                ifelse(payment_amount == "351 - 400 euro", 8, 
+                                ifelse(payment_amount == "401 - 450 euro", 9, 
+                                ifelse(payment_amount == "451 - 500 euro", 10, 
+                                ifelse(payment_amount == "501 - 550 euro", 11, 
+                                ifelse(payment_amount == "551 - 600 euro", 12, 
+                                ifelse(payment_amount == "601 - 650 euro", 13, 
+                                ifelse(payment_amount == "651 - 700 euro", 14, 
+                                ifelse(payment_amount == "Meer dan 700 euro", 6, NA))))))))))))))))
+
+q_data.dt$payment_type = with(q_data.dt,
+                              ifelse(payment_type == "Per ??n maand", 1, 
+                              ifelse(payment_type == "Per twee maanden", 2, 
+                              ifelse(payment_type == "Per drie maanden", 3, NA))))
+
+q_data.dt$energybill = ceiling(q_data.dt$payment_amount / q_data.dt$payment_type)
+
+
+q_data.dt$education_num = with(q_data.dt, 
+                           ifelse(education == "Lager onderwijs",1,
+                           ifelse(education == "Middelbaar onderwijs", 2, 
+                           ifelse(education == "Hogeschool (graduaat of professionele bachelor)", 3, 
+                           ifelse(education == "Universiteit: kandidatuur of bachelor", 4, 
+                           ifelse(education == "Universiteit: licentiaat of master", 5, 
+                           ifelse(education == "Voortgezet onderwijs: manama of postgraduaat", 6, 
+                           ifelse(education == "Doctoraat / PhD", 7, NA))))))))
+
+q_data.dt$education1 = with(q_data.dt, 
+                            ifelse(education_num == 1, 1, 0))
+q_data.dt$education2 = with(q_data.dt, 
+                            ifelse(education_num == 2, 1, 0))
+q_data.dt$education3 = with(q_data.dt, 
+                            ifelse(education_num == 3, 1, 0))
+q_data.dt$education4 = with(q_data.dt, 
+                            ifelse(education_num == 4, 1, 0))
+q_data.dt$education5 = with(q_data.dt, 
+                            ifelse(education_num == 5, 1, 0))
+q_data.dt$education6 = with(q_data.dt, 
+                            ifelse(education_num == 6, 1, 0))
+q_data.dt$education7 = with(q_data.dt, 
+                            ifelse(education_num == 7, 1, 0))
+
+q_data.dt$numbershares = with(q_data.dt, 
+                              ifelse(numbershares == "1", 1, 
+                              ifelse(numbershares == "2", 1, 
+                              ifelse(numbershares == "3", 1, 
+                              ifelse(numbershares == "4", 1, 
+                              ifelse(numbershares == "5", 2, 
+                              ifelse(numbershares == "6", 2, 
+                              ifelse(numbershares == "7", 2,
+                              ifelse(numbershares == "8", 2, 
+                              ifelse(numbershares == "9", 3, 
+                              ifelse(numbershares == "10", 3, 
+                              ifelse(numbershares == "11", 3, 
+                              ifelse(numbershares == "12", 3, 
+                              ifelse(numbershares == "13", 4, 
+                              ifelse(numbershares == "14", 4, 
+                              ifelse(numbershares == "15", 4, 
+                              ifelse(numbershares == "16", 4, 
+                              ifelse(numbershares == "17", 5, 
+                              ifelse(numbershares == "18", 5, 
+                              ifelse(numbershares == "19", 5,
+                              ifelse(numbershares == "20", 5,
+                              ifelse(numbershares == "Meer dan 20", 6, NA)))))))))))))))))))))) #zeg ik liever niet en weet ik niet in NA category
+
+
+q_data.dt$car = with(q_data.dt, 
+                     ifelse(car == "Ja", 1, 
+                     ifelse(car == "Nee", 0, NA))) #zeg ik liever niet in NA category
+
+q_data.dt$cooking = with(q_data.dt, 
+                         ifelse(cooking == "Ja", 1, 
+                         ifelse(cooking == "Nee", 0, NA))) #zeg ik liever niet in NA category
+
+q_data.dt$heatpump = with(q_data.dt, 
+                          ifelse(heatpump == "Ja hybride warmtepomp", 1, 
+                          ifelse(heatpump == "Ja warmtepomp", 2, 
+                          ifelse(heatpump == "Nee", 0, NA)))) #zeg ik liever niet in NA category
+
+q_data.dt$solar = with(q_data.dt, 
+                       ifelse(solar == "Ja", 1, 
+                        ifelse(solar == "Nee", 0, NA)))  #zeg ik liever niet in NA category
+
+
+q_data.dt$yearshares = as.numeric(with(q_data.dt,
+                                       ifelse(yearshares == "Weet ik niet meer", NA, yearshares)))
+
+q_data.dt$yearclient = as.numeric(with(q_data.dt, 
+                                       ifelse(yearclient == "Weet ik niet meer", NA, yearclient)))
+
+q_data.dt$dwelling = with(q_data.dt,
+                          ifelse(dwelling == "Grote stad", 5, 
+                          ifelse(dwelling == "Buitenwijk van grote stad", 4,
+                          ifelse(dwelling == "Dorp of kleine stad", 3, 
+                          ifelse(dwelling == "Plattelandsdorp", 2, 
+                          ifelse(dwelling == "Huis op platteland", 1, NA)))))) #zeg ik liever niet in NA category
+
+q_data.dt$housetype = with(q_data.dt,
+                           ifelse(housetype == "Appartement", 1, 
+                           ifelse(housetype == "Rijtjeshuis", 2, 
+                           ifelse(housetype == "Halfopen bebouwing", 3, 
+                           ifelse(housetype == "Open bebouwing", 4, NA))))) #zeg ik liever niet & anders in NA category
+
+
+q_data.dt$municipality = with(q_data.dt, 
+                              ifelse(municipality == "Zeg ik liever niet", NA, municipality))
+
+
+q_data.dt$ecomotive = q_data.dt$motives_1    # ecological motives
+q_data.dt$sociomotive = q_data.dt$motives_2  # social motives
+q_data.dt$ratiomotive = q_data.dt$motives_3  # financial / rational motives
+q_data.dt$politimotive = q_data.dt$motives_4 # societal / political motives
+
+q_data.dt$age = as.numeric(q_data.dt$age)
+
+#from a major city or not 
+q_data.dt$majorcity1 = ifelse(q_data.dt$municipality == "Antwerpen", 1, 
+                              ifelse(q_data.dt$municipality == "Gent",1, 0))
+q_data.dt$majorcity2 = ifelse(q_data.dt$municipality == "Antwerpen", 1, 
+                              ifelse(q_data.dt$municipality == "Gent",1, 
+                              ifelse(q_data.dt$municipality == "Leuven", 1,
+                              ifelse(q_data.dt$municipality == "Brugge", 1, 0))))
+
+
+
+#-------------------------------------------------------------------------------
+# Prep for analysis
+#-------------------------------------------------------------------------------
+
+
+varying_list = c("set_1","set_2",
+                 "set_3","set_4",
+                 "set_5", "set_6",
+                 "set_7", "set_8",
+                 "set_9",  "set_10",
+                 "set_11", "set_12",
+                 "set_13", "set_14")
+
+# wide to long
+q_data.dt_long <- reshape(q_data.dt, 
+                          direction = "long",
+                          varying = list(varying_list),
+                          v.names = "chooseA",
+                          idvar = "ResponseId",
+                          timevar = "set",
+                          times = 1:14)
+q_data.dt_long$choiceletter = with(q_data.dt_long, 
+                                   ifelse(chooseA == "Bedrijf A", "A", "B"))
+
+#give unique numeric player codes
+q_data.dt_long$unique_player = as.numeric(as.factor(q_data.dt_long$ResponseId))
+
+# make set-per-participant variable
+q_data.dt_long$case = (1000 * q_data.dt_long$set) + q_data.dt_long$unique_player
+
+#open orthogonal array
+ort_array = read_excel("[yourpath]/ort_array.xlsx")
+ort_array = ort_array[-1]
+ort_array = as.data.frame(ort_array)
+ort_array = ort_array[,order(colnames(ort_array))]
+ort_array = ort_array %>% 
+  select("set", everything())
+
+# merge data with orthogonal array
+total.data <- merge(x=q_data.dt_long, y=ort_array, by = "set" ,all.x =  T)
+
+#-------------------------------------------------------------------------------
+# Conditional Logit model (basic)
+#-------------------------------------------------------------------------------
+
+# Create mlogit data class object for mlogit
+# Need the fist two variables to be indexes that are unique (case + alternative (choiceletter)
+# specifically: case, choiceletter, unique_player, (everything before unique player, everything after case)
+total.data_LCL = total.data %>% 
+  select("case", "choiceletter", "unique_player", everything())
+
+class(total.data_LCL)
+
+#select varying variables
+
+
+#starting from the first varying var (AFTER chooseA)
+x = ncol(ort_array[-1])
+y =  (ncol(total.data_LCL)-(x-1))
+
+#the end of the dataframe (?? check this)
+z = ncol(total.data_LCL)
+
+
+# create right class of database
+LCL_data <- mlogit.data(total.data_LCL, 
+                        id = "unique_player", 
+                        choice = "choiceletter", 
+                        varying = y:z, 
+                        shape = "wide", 
+                        sep = "_")
+#names(LCL_data)
+
+
+
+#-------------------------------------------------------------------------------
+# Automate CLM analysis
+#-------------------------------------------------------------------------------
+
+#specify 1. alternative specific variables with generic coefs | 2. choice specific variables | 3. alternative specific variables with specific coefs
+#in this case only alternative specific variables with generic coefficients
+
+#create vector of independent variables of interest
+# leave out the specific price ranges
+params = as.vector(names(LCL_data))
+x =  c("playernr", "case", "choiceletter", "set", "alt", "choose", "chid", "idx",
+       "kwhprijs20","kwhprijs.lin", #leave out the reference category of price + the linear price variable
+       "condities", "uitvoering", "lidmaatschap", "doelgroep","sociale.events", "groene.energie", "afstand.hoofdkwartier", #leave out non-ordinal main variables to include dummies
+       "diversificatie", "weekkosten", "winst.doel",   #leave out non-ordinal main variables to include dummies
+       "lidmaatschapproducent", "uitvoeringprofessionals", "doelgroepgeen", "conditiesgeen", "winst.naarorganisatie", # leave out reference categorie for the non-ordinal variables
+       "sociale.eventsgeen", "groene.energie0", "afstand.hoofdkwartier.lokaal", "diversificatie.geen", "weekkosten.010",# leave out reference categorie for the non-ordinal variables
+       "StartDate", "EndDate", "Status",             # leave out all the qualtrics standard variables + survey variables
+        "Progress","Duration.(in.seconds)","Finished","RecordedDate",
+        "ResponseId","DistributionChannel","UserLanguage","motives_1",
+        "motives_2","motives_3","motives_4","age",
+        "gender","yearshares","yearclient","numbershares",
+        "income","education","dwelling","housetype",
+        "municipality","householdmembers","energyuse","payment_type",
+        "payment_amount","cooking","car","heatpump",
+        "solar","RandomID","male","income_num",
+        "income1","income2","income3","income4",
+        "income5","income6","energybill","education_num",
+        "education1","education2","education3","education4",
+        "education5","education6","education7","ecomotive",
+        "sociomotive","ratiomotive","politimotive","majorcity1",
+        "majorcity2","chooseA", "unique_player")
+params = params[!params %in% x]
+
+#create formula with all variables
+formula1 <- as.formula(paste("choiceletter", "~", paste(params, collapse="+"),"|","0"))
+
+#CLM model 
+ml.MC1 <- mlogit(formula1  , LCL_data)
+summary(ml.MC1 )
+
+```
+
+
+```{r WTP, include = FALSE}
+#-------------------------------------------------------------------------------
+# Automate WTP analysis (ONLY if Energy cooperative)
+#-------------------------------------------------------------------------------
+
+
+
+if ("kwhprijs.lin" %in% colnames(LCL_data)){
+#select variables incl linear version of price instead of dummies
+params2 = as.vector(names(LCL_data))
+x2 =  c("playernr", "case", "choiceletter", "set", "alt", "choose", "chid", "idx",
+       "kwhprijs20","kwhprijs25", "kwhprijs30", "kwhprijs35", #leave out the dummies of price + leave in the linear price variable
+       "condities", "uitvoering", "lidmaatschap", "doelgroep","sociale.events", "groene.energie", "afstand.hoofdkwartier", #leave out non-ordinal main variables to include dummies
+       "diversificatie", "weekkosten", "winst.doel",   #leave out non-ordinal main variables to include dummies
+       "lidmaatschapproducent", "uitvoeringprofessionals", "doelgroepgeen", "conditiesgeen", "winst.naarorganisatie", # leave out reference categorie for the non-ordinal variables
+       "sociale.eventsgeen", "groene.energie0", "afstand.hoofdkwartier.lokaal", "diversificatie.geen", "weekkosten.010", # leave out reference categorie for the non-ordinal variables
+       "StartDate", "EndDate", "Status",             # leave out all the qualtrics standard variables + survey variables
+       "Progress","Duration.(in.seconds)","Finished","RecordedDate",
+       "ResponseId","DistributionChannel","UserLanguage","motives_1",
+       "motives_2","motives_3","motives_4","age",
+       "gender","yearshares","yearclient","numbershares",
+       "income","education","dwelling","housetype",
+       "municipality","householdmembers","energyuse","payment_type",
+       "payment_amount","cooking","car","heatpump",
+       "solar","RandomID","male","income_num",
+       "income1","income2","income3","income4",
+       "income5","income6","energybill","education_num",
+       "education1","education2","education3","education4",
+       "education5","education6","education7","ecomotive",
+       "sociomotive","ratiomotive","politimotive","majorcity1",
+       "majorcity2","chooseA", "unique_player") 
+params2 = params2[!params2 %in% x2]
+
+#take out interaction variables 
+#params2 = params2[!params2 %in% interactionvars]
+
+#create formula with all variables AND the linear version of price per kwh
+formula2 <- as.formula(paste("choiceletter", "~", paste(params2, collapse="+"),"|","0"))
+
+#CLM model 
+ml.MC_wtp <- mlogit(formula2  , LCL_data)
+summary(ml.MC_wtp )
+
+#vector with varnames without kwhprijs.lin 
+x3 = c("kwhprijs.lin")
+params3 = params2[!grepl(paste0(x3, collapse = "|"), params2)]
+
+#Willingness to Pay calculation
+WTP =  sapply(params3,function(x){
+                  
+                  -coef(ml.MC_wtp)[x] / coef(ml.MC_wtp)["kwhprijs.lin"]
+                  
+                })
+names(WTP) = (params3)
+
+#Present table 
+WTP 
+}
+
+
+```
+
+
+
+
+## Beschrijvende Analyse
+
+Hier ziet u de eigenschappen van de respondenten in diagrammen uitgebeeld. 
+
+```{r pressure, echo=FALSE}
+#pie chart gender
+lbls <- paste(table(q_data.dt$gender), sep="")
+pie(table(q_data.dt$gender), labels = lbls,
+    main="Gender",
+    col=rainbow(length(lbls)),
+    cex = 1,
+    radius = 1)
+
+legend("bottomleft", 
+       legend=names(table(q_data.dt$gender)),
+       fill=rainbow(length(lbls)), cex=0.8)
+
+nmen = length(q_data.dt[which(q_data.dt$gender == "Man"),]$gender)
+nwomen = length(q_data.dt[which(q_data.dt$gender == "Vrouw"),]$gender)
+
+```
+
+Zoals het diagram laat zien, hebben `r nmen` mannen en `r nwomen` meegedaan aan dit onderzoek. Dit hoeft niet per se representatief te zijn voor de populatie van leden in uw organisatie, en kan een selectie-effect zijn. 
+
+
+```{r, echo=FALSE}
+#histogram age
+hist(q_data.dt$age,
+     main = "Leeftijd", 
+     xlab = "jaren",
+     ylab = "frequentie", 
+     col = rainbow(length(unique(q_data.dt$age))))
+
+meanage = round(mean(q_data.dt$age))
+minage = min(q_data.dt$age)
+maxage = max(q_data.dt$age)
+```
+
+De gemiddelde leeftijd van de respondenten is `r meanage`. De jongste respondent was `r minage` en de oudste `r maxage`.
+In de grafiek is aangegeven hoeveel respondenten er in elke leeftijdscategorie zitten. 
+
+Het volgende diagram toont het opleidingsniveau van de respondenten. Hier worden de respondenten die "Zeg ik liever niet" hebben ingevuld niet weergegeven. 
+
+```{r, echo=FALSE}
+
+#education 
+lbls <- paste(table(q_data.dt$education_num), sep="")
+pie(table(q_data.dt$education_num), labels = lbls,
+    main="Educatie",
+    col=rainbow(length(lbls)),
+    cex = 1,
+    radius = 0.8)
+
+legend("topleft", 
+       legend=c("Lager onderwijs", "Middelbaar onderwijs", "Hogeschool", "Bachelor", "Master", "Postgraduaat", "PhD"),
+       fill=rainbow(length(lbls)), cex=0.7)
+
+#Get mode for some variables
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+edu_mode = getmode(q_data.dt$education)
+
+```
+
+De meeste respondenten vallen in de `r edu_mode` categorie. 
+
+Het volgende diagram toont het jaarlijks gecombineerd (huishouden) netto inkomen van de respondenten. Hier worden de respondenten die "Zeg ik liever niet" hebben ingevuld niet weergegeven. 
+
+```{r, echo=FALSE}
+
+#income
+lbls <- paste(table(q_data.dt$income_num), sep="")
+pie(table(q_data.dt$income_num), labels = lbls,
+    main="Inkomen in Euro's",
+    col=rainbow(length(lbls)),
+    cex = 1,
+    radius = 0.8)
+
+legend("topleft", 
+       legend=c("0 - 19.999","20.000 - 39.999", "40.000 - 59.999", "60.000 - 79.999", 
+                      "80.000 - 99.999","100.000 of meer"),
+       fill=rainbow(length(lbls)), cex=0.8)
+
+inc_mode = getmode(q_data.dt$income)
+
+```
+
+De meeste respondenten vallen in de `r inc_mode` categorie. 
+
+
+
+
+```{r, include=FALSE}
+#open the INTAKE data (so the data from the initial DKE intake)
+intake.data <- read_excel("[yourpath].xlsx") #fill in the path to the excel export from the Qualtrics intake survey
+intake.data = intake.data[-1,]
+intake.data = intake.data[which(as.numeric(intake.data$aantal_meedoen) > 99),]
+intake.data = intake.data[which(!is.na(intake.data$type)),]
+
+
+#restructure database
+newdata = data.frame(
+  "name"             = intake.data$Naam,
+  "member_nr"        = as.numeric(intake.data$aantal_leden),
+  "member_part"      = as.numeric(intake.data$aantal_meedoen),
+  "type_name"        = ifelse(intake.data$type == "Energie", "energy",
+                       ifelse(intake.data$type == "Voedsel", "food",
+                       ifelse(intake.data$type == "Zorg", "care", "other"))),
+  "type_number"      = ifelse(intake.data$type == "Energie", 1,
+                       ifelse(intake.data$type == "Voedsel", 2,
+                       ifelse(intake.data$type == "Zorg", 3, 4))),
+  "attributes_set"   = ifelse(intake.data$type == "Energie", 5,
+                       ifelse(intake.data$type == "Voedsel", 4,
+                       ifelse(intake.data$type == "Zorg", 4, 3))),
+  "attributes_extra" = ifelse(intake.data$type == "Energie", (lengths(gregexpr(",", intake.data$energie_attributen)) + 1),
+                       ifelse(intake.data$type == "Voedsel", (lengths(gregexpr(",", intake.data$voedsel_attributen)) + 1),
+                       ifelse(intake.data$type == "Zorg", (lengths(gregexpr(",", intake.data$zorg_attributen)) + 1), 
+                              (lengths(gregexpr(",", intake.data$anders_attributen)) + 1)))),
+  "att1"            = 2, #this is the number of options; by putting this here we know that an attribute is included (not 0) and how many attribute levels there are 
+  "att2"            = 2, #for att1, att2 and att3 we know they are always in here, so they are standard 2
+  "att3"            = 2,  
+  "att4"            = ifelse(grepl("Impact", intake.data$energie_attributen) |
+                               grepl("Impact", intake.data$voedsel_attributen) |
+                               grepl("Impact", intake.data$zorg_attributen)    |
+                               grepl("Impact", intake.data$anders_attributen), 2, 0 ), #att4 is not standard selected, so if it is 2 we know it was selected and that it has 2 attribute levels
+  "att5"            = ifelse(intake.data$type == "Energie", 4, 0),
+  "att6"            = ifelse(intake.data$type == "Energie", 4, 0),
+  "att7"            = ifelse(grepl("Winst", intake.data$energie_attributen) |
+                             grepl("Winst", intake.data$voedsel_attributen) |
+                             grepl("winst", intake.data$zorg_attributen)    |
+                             grepl("Winst", intake.data$anders_attributen), 3, 0),
+  "att8"            = ifelse(grepl("Hoeveelheid", intake.data$energie_attributen) |
+                               grepl("Hoeveelheid", intake.data$voedsel_attributen) |
+                               grepl("Hoeveelheid", intake.data$zorg_attributen)    |
+                               grepl("Hoeveelheid", intake.data$anders_attributen), 2, 0),  
+  "att9"            = ifelse(grepl("Afstand", intake.data$energie_attributen) |
+                               grepl("Afstand", intake.data$voedsel_attributen) |
+                               grepl("Afstand", intake.data$zorg_attributen)    |
+                               grepl("Afstand", intake.data$anders_attributen), 3, 0),   
+  "att10"            = ifelse(grepl("Transparantie", intake.data$energie_attributen) |
+                               grepl("Transparantie", intake.data$voedsel_attributen) |
+                               grepl("Transparantie", intake.data$zorg_attributen)    |
+                               grepl("Transparantie", intake.data$anders_attributen), 2, 0),   
+  "att11"            = ifelse(grepl("Verplichte", intake.data$energie_attributen) |
+                                grepl("Verplichte", intake.data$voedsel_attributen) |
+                                grepl("Verplichte", intake.data$zorg_attributen)    |
+                                grepl("Verplichte", intake.data$anders_attributen), 2, 0),     
+  "att12"            = ifelse(grepl("Aantal", intake.data$energie_attributen) |
+                                grepl("Aantal", intake.data$voedsel_attributen) |
+                                grepl("Aantal", intake.data$zorg_attributen)    |
+                                grepl("Aantal", intake.data$anders_attributen), 3, 0),     
+  "att13"            = ifelse(grepl("Diversificatie", intake.data$energie_attributen) |
+                                grepl("Diversificatie", intake.data$voedsel_attributen) |
+                                grepl("Diversificatie", intake.data$zorg_attributen)    |
+                                grepl("Diversificatie", intake.data$anders_attributen), 3, 0),      
+  "att14"            = ifelse(grepl("Energie levering", intake.data$energie_attributen) |
+                                grepl("Energie levering", intake.data$voedsel_attributen) |
+                                grepl("Energie levering", intake.data$zorg_attributen)    |
+                                grepl("Energie levering", intake.data$anders_attributen), 2, 0), 
+  "att15"            = ifelse(grepl("Advies", intake.data$energie_attributen) |
+                                grepl("Advies", intake.data$voedsel_attributen) |
+                                grepl("Advies", intake.data$zorg_attributen)    |
+                                grepl("Advies", intake.data$anders_attributen), 2, 0),
+  "att16"           = ifelse(intake.data$type == "Voedsel", 3, 0),
+  "att17"            = ifelse(grepl("Manier", intake.data$energie_attributen) |
+                                grepl("Manier", intake.data$voedsel_attributen) |
+                                grepl("Manier", intake.data$zorg_attributen)    |
+                                grepl("Manier", intake.data$anders_attributen), 2, 0),
+  "att18"            = ifelse(grepl("Wat ", intake.data$energie_attributen) |
+                                grepl("Wat ", intake.data$voedsel_attributen) |
+                                grepl("Wat ", intake.data$zorg_attributen)    |
+                                grepl("Wat ", intake.data$anders_attributen), 2, 0),  
+  "att19"            = ifelse(grepl("Uniformiteit", intake.data$energie_attributen) |
+                                grepl("Uniformiteit", intake.data$voedsel_attributen) |
+                                grepl("Uniformiteit", intake.data$zorg_attributen)    |
+                                grepl("Uniformiteit", intake.data$anders_attributen), 2, 0),   
+  "att20"            = ifelse(grepl("Type", intake.data$energie_attributen) |
+                                grepl("Type", intake.data$voedsel_attributen) |
+                                grepl("Type", intake.data$zorg_attributen)    |
+                                grepl("Type", intake.data$anders_attributen), 3, 0),    
+  "att21"            = ifelse(grepl("Voedsel", intake.data$energie_attributen) |
+                                grepl("Voedsel", intake.data$voedsel_attributen) |
+                                grepl("Voedsel", intake.data$zorg_attributen)    |
+                                grepl("Voedsel", intake.data$anders_attributen), 2, 0),  
+  "att22"            = ifelse(grepl("Onderhoud", intake.data$energie_attributen) |
+                                grepl("Onderhoud", intake.data$voedsel_attributen) |
+                                grepl("Onderhoud", intake.data$zorg_attributen)    |
+                                grepl("Onderhoud", intake.data$anders_attributen), 3, 0),   
+  "att23"           = ifelse(intake.data$type == "Zorg", 3, 0),
+  "att24"            = ifelse(grepl("Doelgroep", intake.data$energie_attributen) |
+                                grepl("Doelgroep", intake.data$voedsel_attributen) |
+                                grepl("Doelgroep", intake.data$zorg_attributen)    |
+                                grepl("Doelgroep", intake.data$anders_attributen), 3, 0),   
+  "att25"            = ifelse(grepl("Condities", intake.data$energie_attributen) |
+                                grepl("Condities", intake.data$voedsel_attributen) |
+                                grepl("Condities", intake.data$zorg_attributen)    |
+                                grepl("Condities", intake.data$anders_attributen), 3, 0),   
+  "att26"            = ifelse(grepl("Zorgtaken", intake.data$energie_attributen) |
+                                grepl("Zorgtaken", intake.data$voedsel_attributen) |
+                                grepl("Zorgtaken", intake.data$zorg_attributen)    |
+                                grepl("Zorgtaken", intake.data$anders_attributen), 2, 0),   
+  "att27"            = ifelse(grepl("Lidmaatschap", intake.data$energie_attributen) |
+                                grepl("Lidmaatschap", intake.data$voedsel_attributen) |
+                                grepl("Lidmaatschap", intake.data$zorg_attributen)    |
+                                grepl("Lidmaatschap", intake.data$anders_attributen), 2, 0)  
+  
+  )
+
+#total number of attributes is the standard set attributes (varies per type) + the selected attributes
+newdata$total_attributes = newdata$attributes_set + newdata$attributes_extra
+
+
+#we select the attributes that were chosen + set; and this is a vector of levels (as we indicated above)  
+row = 1
+
+levels =  as.numeric(as.vector(newdata[row,8:34])) #select the first row, and the attributes
+levels = levels[which(levels!=0)]
+
+
+#make a table with attributes 
+att_table = data.table(attribuut = "Participatie van leden in besluitvorming", levels = "1 = mogelijk, 0 = niet mogelijk", variabele = "participatie")
+tab_att2 = data.table(attribuut = "Stemrecht van leden in de besluitvorming", levels = "1 = één lid één stem, 0 = in verhouding tot aantal aandelen in bedrijf", variabele = "democratisch.stemrecht")
+tab_att3 = data.table(attribuut = "Evolutie en groei", levels = "1 = focus op uitbreiding en groei, 0 = focus op klein en lokaal", variabele = "evolutie")
+
+att_table = rbind(att_table, tab_att2, tab_att3)
+
+# add the optional attributes
+if(newdata[row,]$att4 > 0){
+tab_att4 = data.table(attribuut = "Impact", levels = "1 = bedrijfsfocus op maatschappelijke impact en leden, 0 = focus alleen op leden" , variabele = "impact")
+att_table = rbind(att_table, tab_att4)
+}
+if(newdata[row,]$att5 > 0){
+tab_att5 = data.table(attribuut = "Percentage groene energie", levels = "0 = 0%, 1 = 33.3%, 2 = 66.6%, 3 = 100%", variabele = "groene.energie0/33/66/100")
+att_table = rbind(att_table, tab_att5)
+}
+if(newdata[row,]$att6 > 0){
+tab_att6 = data.table(attribuut = "Prijs per kWh", levels = "1 = 20 cent, 2 = 25 cent, 3 = 30 cent, 4 = 35 cent" , variabele = "kwhprijs20/25/30/35")
+att_table = rbind(att_table, tab_att6)
+}
+if(newdata[row,]$att7 > 0){
+tab_att7 = data.table(attribuut = "Winst", levels = "1 = verdelen als dividend onder leden, 2 = investeren in organisatie, 3 = investeren in maatschappelijke projecten", variabele = "winst.naarleden/naarorganisatie/naarmaatschappij")
+att_table = rbind(att_table, tab_att7)
+}
+if(newdata[row,]$att8 > 0){
+tab_att8 = data.table(attribuut = "Hoeveelheid leden", levels = "1 = gelimiteerd, 0 = ongelimiteerd" , variabele = "limiet.leden")
+att_table = rbind(att_table, tab_att8)
+}
+if(newdata[row,]$att9 > 0){
+tab_att9 = data.table(attribuut = "Afstand tot hoofdkwartier van het burgercollectief", levels = "1 = lokaal (0-10 km), 2 = regionaal (10-30 km), 3 = supraregionaal (>30 km)", variabele = "afstand.hoofdkwartier.lokaal/regionaal/supraregionaal")
+att_table = rbind(att_table, tab_att9)
+}
+if(newdata[row,]$att10 > 0){
+tab_att10 = data.table(attribuut = "Transparantie van prijsvaststelling", levels = "1 = volledige transparantie, 0 = wettelijke transparantie", variabele = "transparantie.prijs")
+att_table = rbind(att_table, tab_att10)
+}
+if(newdata[row,]$att11 > 0){
+tab_att11 = data.table(attribuut = "Verplichte kosten bij lidmaatschap", levels = "1 = verplichte kosten om lid te worden, 0 = geen verplichte kosten", variabele = "verplichte.kosten")
+att_table = rbind(att_table, tab_att11)
+}
+if(newdata[row,]$att12 > 0){
+tab_att12 = data.table(attribuut = "Aantal sociale events voor leden (naast ALV)", levels = "1 = geen, 2 = maandelijks, 3 = jaarlijks" , variabele = "sociale.eventsgeen/maandelijks/jaarlijks")
+att_table = rbind(att_table, tab_att12)
+}
+if(newdata[row,]$att13 > 0){
+tab_att13 = data.table(attribuut = "Diversificatie van producten naast elektriciteit", levels = "1 = geen diversificatie, 2 = enige diversificatie, 3 = veel diversificatie" , variabele = "diversificatie.geen/enige/veel")
+att_table = rbind(att_table, tab_att13)
+}
+if(newdata[row,]$att14 > 0){
+tab_att14 = data.table(attribuut = "Energie levering", levels = "1 = eigen energielevering, 0 = via netbeheerder", variabele = "eigen.energielevering")
+att_table = rbind(att_table, tab_att14)
+}
+if(newdata[row,]$att15 > 0){
+tab_att15 = data.table(attribuut = "Advies vanuit de organisatie over installaties en energiezuinig wonen", levels = "1 = individueel advies, 0 = alleen algemeen advies", variabele = "individueel.advies")
+att_table = rbind(att_table, tab_att15)
+}
+if(newdata[row,]$att16 > 0){
+tab_att16 = data.table(attribuut = "Wekelijke kosten", levels = "1 = 0-10 euro, 2 = 10-30 euro, 3 = 30-50 euro", variabele = "weekkosten.010/1030/3050")
+att_table = rbind(att_table, tab_att16)
+}
+if(newdata[row,]$att17 > 0){
+tab_att17 = data.table(attribuut = "Manier waarop voedsel verkregen wordt", levels = "1 = bezorgservice of zelf ophalen, 0 = alleen zelf ophalen", variabele = "voedsel.bezorgen")
+att_table = rbind(att_table, tab_att17)
+}
+if(newdata[row,]$att18 > 0){
+tab_att18 = data.table(attribuut = "Wat gebeurt er bij een tekort", levels = "1 = externe inkoop, 0 = geen externe inkoop", variabele = "externe.inkoop")
+att_table = rbind(att_table, tab_att18)
+}
+if(newdata[row,]$att19 > 0){
+tab_att19 = data.table(attribuut = "Uniformiteit van filialen", levels = "1 = alle filialen hebben hetzelfde organisatiemodel, 0 = verschillende filialen hebben verschillende organisatiemodellen", variabele = "uniformiteit")
+att_table = rbind(att_table, tab_att19)
+}
+if(newdata[row,]$att20 > 0){
+tab_att20 = data.table(attribuut = "Type lidmaatschap", levels = "1 = alleen producent, 2 = alleen consument, 3 = prosumer (producent en consument)", variabele = "lidmaatschap.consument/producent/prosumer")
+att_table = rbind(att_table, tab_att20)
+}
+if(newdata[row,]$att21 > 0){
+tab_att21 = data.table(attribuut = "Voedsel beschikbaarheid", levels = "1 = het hele jaar rond, 0 = in bepaalde delen van het jaar", variabele = "beschikbaarheid")
+att_table = rbind(att_table, tab_att21)
+}
+if(newdata[row,]$att22 > 0){
+tab_att22 = data.table(attribuut = "Onderhoud en productie", levels = "1 = verplichte participatie van leden, 0 = vrijwillige participatie van leden", variabele = "bijdrage.onderhoudproductie")
+att_table = rbind(att_table, tab_att22)
+}
+if(newdata[row,]$att23 > 0){
+tab_att23 = data.table(attribuut = "De uitvoering van zorgg", levels = "1 = zorgprofessionals in vaste dienst van de organisatie, 2 = zorgprofessionals in vaste dienst en taken uitgevoerd door leden, 3 = alleen uitgevoerd door leden", variabele = "uitvoeringprofessionals/professionals.leden/leden")
+att_table = rbind(att_table, tab_att23)
+}
+if(newdata[row,]$att24 > 0){
+tab_att24 = data.table(attribuut = "Doelgroep", levels = "1 = ouderen, 2 = mensen met een beperking, 3 = geen specifieke doelgroep" , variabele = "doelgroepouderen/handicap/geen")
+att_table = rbind(att_table, tab_att24)
+}
+if(newdata[row,]$att25 > 0){
+tab_att25 = data.table(attribuut = "Condities voor het ontvangen van hulp", levels = "1 = geen specifieke eisen, 2 = éénmalige vergoeding om hulp te ontvangen, 3 = bepaald aantal jaren lidmaatschap" , variabele = "conditiesgeen/vergoeding/jarenlid")
+att_table = rbind(att_table, tab_att25)
+}
+if(newdata[row,]$att26 > 0){
+tab_att26 = data.table(attribuut = "Zorgtaken", levels = "1 = worden uitbesteed aan zorg providers, 0 = worden gedaan door de organisatie zelf" , variabele = "zorgtaken.zelf")
+att_table = rbind(att_table, tab_att26)
+}
+if(newdata[row,]$att27 > 0){
+tab_att27 = data.table(attribuut = "Lidmaatschap voorwaarden", levels = "1 = selectieve procedure om lid te worden, 0 = iedereen kan lid worden", variabele = "selectieve,voorwaarden")
+att_table = rbind(att_table, tab_att27)
+}
+
+
+
+```
+
+
+# DKE analyse
+
+In het onderzoek hebben respondenten steeds keuzes tussen twee fictieve organisaties gemaakt. Deze organisaties hadden elke keer verschillende eigenschappen. Door het analyseren van de voorkeuren van de respondenten bij elke keuze die zij maakten, weten we nu welke eigenschappen zij het belangrijkst vinden, en of zij voorkeur of afkeer van bepaalde eigenschappen hebben. Weet u niet meer goed hoe een Discrete Keuze Experiment werkt? Klik dan [hier](https://erasmusuniversity.eu.qualtrics.com/jfe/form/SV_3IRTV1mDnZnwuMe) voor uitleg!
+
+U heeft een aantal eigenschappen (attributen) uitgekozen tijdens de intake, die in uw DKE zijn opgenomen, en waar we nu informatie over hebben. 
+
+De attributen, de levels van deze attributen en de analyse-namen van deze attributen (zoals ze genoemd worden in de onderstaande analyses) worden weergegeven in onderstaande tabel:
+
+```{r, echo = FALSE}
+kable(att_table)
+```
+
+
+Onderstaande grafiek laat zien hoe belangrijk elke eigenschap gevonden wordt door de respondenden. Eigenschappen met een groene cirkel rechts van de nullijn hebben een grote voorkeur: hoe verder naar rechts, des te groter de voorkeur. 
+Eigenschappen met een groene cirkel links van de nullijn hebben geen voorkeur, of afkeer: hoe verder naar links, des te groter de afkeer. Eigenschappen met een groene cirkel dicht bij of op de nullijn worden niet belangrijk gevonden door de respondenten; er is geen voorkeur voor of afkeer tegen. 
+
+
+```{r echo=FALSE}
+plot_summs(ml.MC1, scale = TRUE, colors = "seagreen",
+           point.size = 5,
+           plot.distributions = FALSE)
+
+
+#which variables have a preference 
+pos_names = names(coef(ml.MC1)[which(coef(ml.MC1) > 0.2)])
+neg_names = names(coef(ml.MC1)[which(coef(ml.MC1) < 0.2)])
+```
+
+
+```{r, echo=FALSE}
+pos_condition = ifelse(length(pos_names) > 0, FALSE, TRUE) 
+neg_condition = ifelse(length(neg_names) > 0, FALSE, TRUE)
+```
+
+Leden hebben voorkeur voor de volgende eigenschappen: **`r pos_names``r if(pos_condition){"Geen"}`**.
+
+Leden hebben afkeer van de volgende eigenschappen: **`r neg_names``r if(neg_condition){"Geen"}`**.
+
+***Let op**: voor elke eigenschap (attribuut) zijn er meerdere levels; soms 2 en soms meer. In de analyse wordt er 1 level uit gelaten (de referentiecategorie, aangegeven met "0 = .." in de attributen tabel hierboven). De resultaten in de grafiek laten de voorkeuren van respondenten zien voor een eigenschap-level **ten**  **opzichte** **van** de referentiecategorie. De referentiecategorie is de nullijn: als een level links van de nullijn ligt wordt deze dus slechter beoordeeld dan de referentiecategorie, en als een level rechts van de nullijn ligt wordt deze beter beoordeeld dan de referentiecategorie.* 
+
+*Bijvoorbeeld: het effect voor participatie in de grafiek is de voorkeur van respondenten voor participatie = mogelijk ten opzichte van participatie = niet mogelijk (op de nullijn). En: het effect voor democratisch stemrecht in de grafiek is de voorkeur van respondenten voor democratisch stemrecht **ten**  **opzichte** **van** stemrecht in verhouding tot het aantal aandelen (de nullijn).* 
+*Bij attributen met meer dan 2 levels moeten de positieve of negatieve voorkeuren van respondenten voor de levels die in de grafiek zijn weergegeven dus geïnterpreteerd worden als de voorkeuren voor die levels **ten**  **opzichte** **van** de level die niet in de grafiek staat (de nullijn).* 
+
+```{r, echo = FALSE}
+if ("kwhprijs.lin" %in%   names(LCL_data)) {WTP_YES = TRUE}
+if ("kwhprijs.lin" %in%   names(LCL_data)) {WTP_NOT = FALSE}
+
+```
+`r if(WTP_YES){"# 'Willingness To Pay': Bereidheid te betalen "}`
+
+`r if(WTP_YES){"In het Discrete Keuze Experiment is de eigenschap prijs per kWh opgenomen. Hiermee kunnen we berekenen hoeveel eurocent respondenten bereid zijn te betalen voor verschillende andere eigenschappen in het DKE. In de onderstaande grafiek is te zien hoeveel eurocent extra respondenten zouden betalen voor een bepaalde eigenschap. "}`
+
+
+```{r, eval=WTP_YES, echo=FALSE}
+barchart(WTP, 
+         main = "Bereidheid te betalen in Eurocent", 
+         xlab = "Eurocent")
+```
+
+
+
+
+

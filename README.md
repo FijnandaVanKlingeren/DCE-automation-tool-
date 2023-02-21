@@ -1,6 +1,7 @@
 # DCE-automation-tool-
 R, Python and RMarkdown code for the partial automation of creating and conducting a Discrete Choice Experiment 
 
+Note: all files fall under an MIT License as listed in the file "LICENSE" 
 
 This repository holds the following files:
 

@@ -1,0 +1,21 @@
+_,Price,Renewable Energy,Participation
+set1.alt1,25,100%,no
+set1.alt2,30,66%,yes
+set2.alt1,35,33%,no
+set2.alt2,25,100%,yes
+set3.alt1,30,0%,yes
+set3.alt2,35,100%,no
+set4.alt1,30,66%,no
+set4.alt2,25,0%,yes
+set5.alt1,35,0%,yes
+set5.alt2,25,33%,no
+set6.alt1,25,0%,no
+set6.alt2,35,100%,yes
+set7.alt1,30,33%,no
+set7.alt2,30,100%,yes
+set8.alt1,35,0%,no
+set8.alt2,30,66%,yes
+set9.alt1,30,33%,yes
+set9.alt2,35,0%,no
+set10.alt1,35,33%,yes
+set10.alt2,30,66%,no

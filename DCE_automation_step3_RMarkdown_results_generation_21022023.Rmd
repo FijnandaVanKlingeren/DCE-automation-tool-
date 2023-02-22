@@ -1,11 +1,17 @@
 ---
-title: "Collectieve Kracht DKE Onderzoeksrapport"
+title: "DKE Onderzoeksrapport"
 output: html_document
 date: "[Fill in the date]"
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 # NOTE: This code is made available under an MIT license. The code is free to use, but the author of the code will have to be cited for every form of publication that is created with the code. 
+```
+
+
+![](ck_logo.png) 
+```{r, include=FALSE}
+# Fill above the path to the collectieve kracht logo
 ```
 
 
@@ -13,6 +19,8 @@ date: "[Fill in the date]"
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
+
+![Collectieve Kracht](C:/Users/Fijnanda/Dropbox/RSM postdoc/DCE project/app/rcode/ck_logo.png) 
 
 ```{r, include=FALSE}
 library(ggplot2)

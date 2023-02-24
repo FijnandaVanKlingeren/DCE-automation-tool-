@@ -1,26 +1,26 @@
 {
     "SurveyEntry": {
-        "SurveyID": "SV_55cch3rKyE5XvrU",
+        "SurveyID": "SV_afWJQHf3gDptwii",
         "SurveyName": "DCE - Voorbeeld",
         "SurveyDescription": null,
         "SurveyOwnerID": "UR_cSyTmKmUm8P7wPP",
         "SurveyBrandID": "erasmusuniversity",
         "DivisionID": null,
         "SurveyLanguage": "NL",
-        "SurveyActiveResponseSet": "RS_5zL0JqPidqOItFk",
+        "SurveyActiveResponseSet": "RS_3xG6pUME1jYkLiu",
         "SurveyStatus": "Inactive",
         "SurveyStartDate": "0000-00-00 00:00:00",
         "SurveyExpirationDate": "0000-00-00 00:00:00",
-        "SurveyCreationDate": "2022-10-27 09:14:15",
+        "SurveyCreationDate": "2023-02-24 07:08:48",
         "CreatorID": "UR_cSyTmKmUm8P7wPP",
-        "LastModified": "2022-10-27 09:28:56",
+        "LastModified": "2023-02-24 07:09:21",
         "LastAccessed": "0000-00-00 00:00:00",
         "LastActivated": "0000-00-00 00:00:00",
         "Deleted": null
     },
     "SurveyElements": [
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "BL",
             "PrimaryAttribute": "Survey Blocks",
             "SecondaryAttribute": null,
@@ -35,25 +35,20 @@
                 "2": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 1",
-                    "ID": "BL_KWXFWoEK3FoGRdX",
+                    "Description": "Pre",
+                    "ID": "BL_3VnyPwqmtLCmTCm",
                     "BlockElements": [
                         {
                             "Type": "Question",
                             "QuestionID": "QID1"
                         }
-                    ],
-                    "Options": {
-                        "BlockLocking": "false",
-                        "RandomizeQuestions": "false",
-                        "BlockVisibility": "Expanded"
-                    }
+                    ]
                 },
                 "3": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 2",
-                    "ID": "BL_exy06qixW9TwooR",
+                    "Description": "Choice 1",
+                    "ID": "BL_KWXFWoEK3FoGRdX",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -69,8 +64,8 @@
                 "4": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 3",
-                    "ID": "BL_dwWd4euES0tUL9h",
+                    "Description": "Choice 2",
+                    "ID": "BL_exy06qixW9TwooR",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -86,8 +81,8 @@
                 "5": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 4",
-                    "ID": "BL_F4EAvpU3auiu3NJ",
+                    "Description": "Choice 3",
+                    "ID": "BL_dwWd4euES0tUL9h",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -103,8 +98,8 @@
                 "6": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 5",
-                    "ID": "BL_uK1iNhhhsDLw3DR",
+                    "Description": "Choice 4",
+                    "ID": "BL_F4EAvpU3auiu3NJ",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -120,8 +115,8 @@
                 "7": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 6",
-                    "ID": "BL_ojDqIN27DnlID4v",
+                    "Description": "Choice 5",
+                    "ID": "BL_uK1iNhhhsDLw3DR",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -137,8 +132,8 @@
                 "8": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 7",
-                    "ID": "BL_0zP9l33EMHp4A66",
+                    "Description": "Choice 6",
+                    "ID": "BL_ojDqIN27DnlID4v",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -154,8 +149,8 @@
                 "9": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 8",
-                    "ID": "BL_MWGeIHQu7KHJpPA",
+                    "Description": "Choice 7",
+                    "ID": "BL_0zP9l33EMHp4A66",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -171,8 +166,8 @@
                 "10": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 9",
-                    "ID": "BL_UtoyrHHNRcAjs8O",
+                    "Description": "Choice 8",
+                    "ID": "BL_MWGeIHQu7KHJpPA",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -188,8 +183,8 @@
                 "11": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Choice 10",
-                    "ID": "BL_o4MbQmhVhCJMx3d",
+                    "Description": "Choice 9",
+                    "ID": "BL_UtoyrHHNRcAjs8O",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -205,20 +200,25 @@
                 "12": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 1",
-                    "ID": "BL_SDphPBleGszcwry",
+                    "Description": "Choice 10",
+                    "ID": "BL_o4MbQmhVhCJMx3d",
                     "BlockElements": [
                         {
                             "Type": "Question",
                             "QuestionID": "QID11"
                         }
-                    ]
+                    ],
+                    "Options": {
+                        "BlockLocking": "false",
+                        "RandomizeQuestions": "false",
+                        "BlockVisibility": "Expanded"
+                    }
                 },
                 "13": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 2",
-                    "ID": "BL_F3aVnXn0EhevfQn",
+                    "Description": "Extra 1",
+                    "ID": "BL_SDphPBleGszcwry",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -229,8 +229,8 @@
                 "14": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 3",
-                    "ID": "BL_l2uXh8FKHyV53ro",
+                    "Description": "Extra 2",
+                    "ID": "BL_F3aVnXn0EhevfQn",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -241,8 +241,8 @@
                 "15": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 4",
-                    "ID": "BL_jaTBc0QN0l28zk8",
+                    "Description": "Extra 3",
+                    "ID": "BL_l2uXh8FKHyV53ro",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -253,8 +253,8 @@
                 "16": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 5",
-                    "ID": "BL_hNtjv369fqoxxpl",
+                    "Description": "Extra 4",
+                    "ID": "BL_jaTBc0QN0l28zk8",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -265,8 +265,8 @@
                 "17": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 6",
-                    "ID": "BL_8lYomiAiS9Eef5H",
+                    "Description": "Extra 5",
+                    "ID": "BL_hNtjv369fqoxxpl",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -277,8 +277,8 @@
                 "18": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 7",
-                    "ID": "BL_Y5hyTiRZdgFgOfo",
+                    "Description": "Extra 6",
+                    "ID": "BL_8lYomiAiS9Eef5H",
                     "BlockElements": [
                         {
                             "Type": "Question",
@@ -289,19 +289,43 @@
                 "19": {
                     "Type": "Standard",
                     "SubType": "",
-                    "Description": "Extra 8",
-                    "ID": "BL_sfWdBrHS4d0MiRQ",
+                    "Description": "Extra 7",
+                    "ID": "BL_Y5hyTiRZdgFgOfo",
                     "BlockElements": [
                         {
                             "Type": "Question",
                             "QuestionID": "QID18"
                         }
                     ]
+                },
+                "20": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Extra 8",
+                    "ID": "BL_sfWdBrHS4d0MiRQ",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID19"
+                        }
+                    ]
+                },
+                "21": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Post",
+                    "ID": "BL_3f3RkG9hCtopfg2",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID20"
+                        }
+                    ]
                 }
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "FL",
             "PrimaryAttribute": "Survey Flow",
             "SecondaryAttribute": null,
@@ -311,125 +335,164 @@
                 "FlowID": "FL_1",
                 "Flow": [
                     {
-                        "Type": "Standard",
-                        "ID": "BL_KWXFWoEK3FoGRdX",
+                        "Type": "EmbeddedData",
                         "FlowID": "FL_2",
-                        "Autofill": []
+                        "EmbeddedData": [
+                            {
+                                "Description": "completion_code",
+                                "Type": "Custom",
+                                "Field": "completion_code",
+                                "VariableType": "String",
+                                "DataVisibility": [],
+                                "AnalyzeText": false,
+                                "Value": "${rand://int/10000000:99999999}"
+                            }
+                        ]
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_exy06qixW9TwooR",
+                        "ID": "BL_3VnyPwqmtLCmTCm",
                         "FlowID": "FL_3",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_dwWd4euES0tUL9h",
+                        "ID": "BL_KWXFWoEK3FoGRdX",
                         "FlowID": "FL_4",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_F4EAvpU3auiu3NJ",
+                        "ID": "BL_exy06qixW9TwooR",
                         "FlowID": "FL_5",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_uK1iNhhhsDLw3DR",
+                        "ID": "BL_dwWd4euES0tUL9h",
                         "FlowID": "FL_6",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_ojDqIN27DnlID4v",
+                        "ID": "BL_F4EAvpU3auiu3NJ",
                         "FlowID": "FL_7",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_0zP9l33EMHp4A66",
+                        "ID": "BL_uK1iNhhhsDLw3DR",
                         "FlowID": "FL_8",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_MWGeIHQu7KHJpPA",
+                        "ID": "BL_ojDqIN27DnlID4v",
                         "FlowID": "FL_9",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_UtoyrHHNRcAjs8O",
+                        "ID": "BL_0zP9l33EMHp4A66",
                         "FlowID": "FL_10",
                         "Autofill": []
                     },
                     {
                         "Type": "Standard",
-                        "ID": "BL_o4MbQmhVhCJMx3d",
+                        "ID": "BL_MWGeIHQu7KHJpPA",
                         "FlowID": "FL_11",
                         "Autofill": []
                     },
                     {
+                        "Type": "Standard",
+                        "ID": "BL_UtoyrHHNRcAjs8O",
+                        "FlowID": "FL_12",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_o4MbQmhVhCJMx3d",
+                        "FlowID": "FL_13",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
                         "ID": "BL_SDphPBleGszcwry",
-                        "Type": "Standard",
-                        "FlowID": "FL_12"
+                        "FlowID": "FL_14",
+                        "Autofill": []
                     },
                     {
+                        "Type": "Standard",
                         "ID": "BL_F3aVnXn0EhevfQn",
-                        "Type": "Standard",
-                        "FlowID": "FL_16"
+                        "FlowID": "FL_15",
+                        "Autofill": []
                     },
                     {
+                        "Type": "Standard",
                         "ID": "BL_l2uXh8FKHyV53ro",
-                        "Type": "Standard",
-                        "FlowID": "FL_17"
+                        "FlowID": "FL_16",
+                        "Autofill": []
                     },
                     {
+                        "Type": "Standard",
                         "ID": "BL_jaTBc0QN0l28zk8",
-                        "Type": "Standard",
-                        "FlowID": "FL_18"
+                        "FlowID": "FL_17",
+                        "Autofill": []
                     },
                     {
+                        "Type": "Standard",
                         "ID": "BL_hNtjv369fqoxxpl",
-                        "Type": "Standard",
-                        "FlowID": "FL_13"
+                        "FlowID": "FL_18",
+                        "Autofill": []
                     },
                     {
+                        "Type": "Standard",
                         "ID": "BL_8lYomiAiS9Eef5H",
-                        "Type": "Standard",
-                        "FlowID": "FL_19"
+                        "FlowID": "FL_19",
+                        "Autofill": []
                     },
                     {
+                        "Type": "Standard",
                         "ID": "BL_Y5hyTiRZdgFgOfo",
-                        "Type": "Standard",
-                        "FlowID": "FL_14"
+                        "FlowID": "FL_20",
+                        "Autofill": []
                     },
                     {
-                        "ID": "BL_sfWdBrHS4d0MiRQ",
                         "Type": "Standard",
-                        "FlowID": "FL_15"
+                        "ID": "BL_sfWdBrHS4d0MiRQ",
+                        "FlowID": "FL_21",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_3f3RkG9hCtopfg2",
+                        "FlowID": "FL_22",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "EndSurvey",
+                        "FlowID": "FL_23"
                     }
                 ],
                 "Properties": {
-                    "Count": 18,
+                    "Count": 23,
                     "RemovedFieldsets": []
                 }
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "PL",
             "PrimaryAttribute": "Preview Link",
             "SecondaryAttribute": null,
             "TertiaryAttribute": null,
             "Payload": {
                 "PreviewType": "Brand",
-                "PreviewID": "88ea33cc-b963-4c43-8052-81dc831564ec"
+                "PreviewID": "106d2bb4-9993-4df4-b764-4aba7e104b85"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SO",
             "PrimaryAttribute": "Survey Options",
             "SecondaryAttribute": null,
@@ -510,7 +573,7 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SCO",
             "PrimaryAttribute": "Scoring",
             "SecondaryAttribute": null,
@@ -526,7 +589,7 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "PROJ",
             "PrimaryAttribute": "CORE",
             "SecondaryAttribute": null,
@@ -537,7 +600,7 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "STAT",
             "PrimaryAttribute": "Survey Statistics",
             "SecondaryAttribute": null,
@@ -548,9 +611,9 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID11",
+            "PrimaryAttribute": "QID12",
             "SecondaryAttribute": "age",
             "TertiaryAttribute": null,
             "Payload": {
@@ -576,13 +639,13 @@
                 "SearchSource": {
                     "AllowFreeResponse": "false"
                 },
-                "QuestionID": "QID11"
+                "QuestionID": "QID12"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID15",
+            "PrimaryAttribute": "QID16",
             "SecondaryAttribute": "yearmember",
             "TertiaryAttribute": null,
             "Payload": {
@@ -608,13 +671,13 @@
                 "SearchSource": {
                     "AllowFreeResponse": "false"
                 },
-                "QuestionID": "QID15"
+                "QuestionID": "QID16"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID17",
+            "PrimaryAttribute": "QID18",
             "SecondaryAttribute": "municipality",
             "TertiaryAttribute": null,
             "Payload": {
@@ -640,13 +703,13 @@
                 "SearchSource": {
                     "AllowFreeResponse": "false"
                 },
-                "QuestionID": "QID17"
+                "QuestionID": "QID18"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID18",
+            "PrimaryAttribute": "QID19",
             "SecondaryAttribute": "nrfamily",
             "TertiaryAttribute": null,
             "Payload": {
@@ -672,13 +735,13 @@
                 "SearchSource": {
                     "AllowFreeResponse": "false"
                 },
-                "QuestionID": "QID18"
+                "QuestionID": "QID19"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID12",
+            "PrimaryAttribute": "QID13",
             "SecondaryAttribute": "gender",
             "TertiaryAttribute": null,
             "Payload": {
@@ -723,7 +786,7 @@
                 "NextAnswerId": 1,
                 "QuestionText_Unsafe": "Wat is uw gender?",
                 "DataExportTag": "gender",
-                "QuestionID": "QID12",
+                "QuestionID": "QID13",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -731,9 +794,9 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID13",
+            "PrimaryAttribute": "QID14",
             "SecondaryAttribute": "income",
             "TertiaryAttribute": null,
             "Payload": {
@@ -790,7 +853,7 @@
                 "NextAnswerId": 1,
                 "QuestionText_Unsafe": "Wat is het gecombineerde jaarlijkse netto inkomen van uw huishouden?",
                 "DataExportTag": "income",
-                "QuestionID": "QID13",
+                "QuestionID": "QID14",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -798,9 +861,9 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID14",
+            "PrimaryAttribute": "QID15",
             "SecondaryAttribute": "education",
             "TertiaryAttribute": null,
             "Payload": {
@@ -857,7 +920,7 @@
                 "NextAnswerId": 1,
                 "QuestionText_Unsafe": "Wat is uw hoogst afgeronde opleiding?",
                 "DataExportTag": "education",
-                "QuestionID": "QID14",
+                "QuestionID": "QID15",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -865,9 +928,9 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID16",
+            "PrimaryAttribute": "QID17",
             "SecondaryAttribute": "housetype",
             "TertiaryAttribute": null,
             "Payload": {
@@ -891,7 +954,7 @@
                         "Display": "halfopen bebouwing"
                     },
                     "4": {
-                        "Display": "Open bebouwing"
+                        "Display": "open bebouwing"
                     },
                     "5": {
                         "Display": "zeg ik liever niet"
@@ -916,7 +979,7 @@
                 "NextAnswerId": 1,
                 "QuestionText_Unsafe": "In welk type woning woont u?",
                 "DataExportTag": "housetype",
-                "QuestionID": "QID16",
+                "QuestionID": "QID17",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -924,29 +987,58 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "QC",
             "PrimaryAttribute": "Survey Question Count",
-            "SecondaryAttribute": "18",
+            "SecondaryAttribute": "20",
             "TertiaryAttribute": null,
             "Payload": null
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "RS",
-            "PrimaryAttribute": "RS_5zL0JqPidqOItFk",
+            "PrimaryAttribute": "RS_3xG6pUME1jYkLiu",
             "SecondaryAttribute": "Default Response Set",
             "TertiaryAttribute": null,
             "Payload": null
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
             "PrimaryAttribute": "QID1",
+            "SecondaryAttribute": "Instructies Uitnodiging ledenonderzoek Hierbij nodigen de onderzoekers van de Erasmus Universitei...",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "<h2>Instructies</h2><div><br></div>\n\n<h3>Uitnodiging ledenonderzoek</h3>\nHierbij nodigen de onderzoekers van de Erasmus Universiteit van Rotterdam u uit om mee te doen aan dit anonieme onderzoek. Dankzij uw deelname geeft u ons inzicht in de motivaties van leden van een energieco\u00f6peratie, zoals u. In het onderzoek krijgt u 14 keuzes voorgelegd. U moet telkens kiezen tussen twee beschreven energiebedrijven met verschillende eigenschappen. Het onderzoek duurt ongeveer 12 minuten. Denk rustig na over uw antwoord, u kunt niet terug naar de vorige vraag.\n\n<br><br><h3>Deelnemers rechten: Toestemming en terugtrekking</h3>\nDeelname aan dit onderzoek is volledig vrijwillig en anoniem. Op geen enkel moment hebben de onderzoekers toegang tot identificeerbare informatie over u. U stemt in met deelname door het onderzoek in te vullen tot op het einde. Als u eerst mee wil doen en u zich later bedenkt, kunt u uw internet tabblad gewoon sluiten. Onvoltooide vragenlijsten worden niet verwerkt. Als u het onderzoek voltooid heeft en u zich daarna bedenkt, kunt u hier een e-mail over sturen naar uw burgercollectief. Vermeld daarin de datum van deelname en uw voltooiingscode (die krijgt u te zien op het laatste scherm). Uw data wordt dan verwijderd.\n\n<br><br><h3>Privacy en vertrouwelijkheid</h3>\nTijdens het onderzoek hebben slechts de hoofdonderzoekers toegang tot de data. Een rapport over de resultaten zal via uw burgercollectief gepubliceerd worden na afronding van het onderzoek.",
+                "DefaultChoices": false,
+                "DataExportTag": "Pre",
+                "QuestionID": "QID1",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Instructies Uitnodiging ledenonderzoek Hierbij nodigen de onderzoekers van de Erasmus Universitei...",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1
+            }
+        },
+        {
+            "SurveyID": "SV_afWJQHf3gDptwii",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID2",
             "SecondaryAttribute": "Keuze 1 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 1</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">25</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">100%</span></td>\n  <td><span style=\"color:#000066;\">66%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 1</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">25</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">100%</span></td>\n  <td><span style=\"color:#000066;\">66%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_1",
                 "QuestionType": "MC",
@@ -979,7 +1071,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID1",
+                "QuestionID": "QID2",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -987,13 +1079,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID2",
+            "PrimaryAttribute": "QID3",
             "SecondaryAttribute": "Keuze 2 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 2</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">25</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 2</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">25</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_2",
                 "QuestionType": "MC",
@@ -1026,7 +1118,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID2",
+                "QuestionID": "QID3",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1034,13 +1126,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID3",
+            "PrimaryAttribute": "QID4",
             "SecondaryAttribute": "Keuze 3 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 3</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">35</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 3</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">35</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_3",
                 "QuestionType": "MC",
@@ -1073,7 +1165,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID3",
+                "QuestionID": "QID4",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1081,13 +1173,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID4",
+            "PrimaryAttribute": "QID5",
             "SecondaryAttribute": "Keuze 4 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 4</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">25</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">66%</span></td>\n  <td><span style=\"color:#000066;\">0%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 4</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">25</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">66%</span></td>\n  <td><span style=\"color:#000066;\">0%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_4",
                 "QuestionType": "MC",
@@ -1120,7 +1212,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID4",
+                "QuestionID": "QID5",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1128,13 +1220,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID5",
+            "PrimaryAttribute": "QID6",
             "SecondaryAttribute": "Keuze 5 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 5</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">25</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">33%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 5</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">25</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">33%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_5",
                 "QuestionType": "MC",
@@ -1167,7 +1259,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID5",
+                "QuestionID": "QID6",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1175,13 +1267,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID6",
+            "PrimaryAttribute": "QID7",
             "SecondaryAttribute": "Keuze 6 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 6</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">25</span></td>\n  <td><span style=\"color:#000066;\">35</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 6</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">25</span></td>\n  <td><span style=\"color:#000066;\">35</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_6",
                 "QuestionType": "MC",
@@ -1214,7 +1306,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID6",
+                "QuestionID": "QID7",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1222,13 +1314,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID7",
+            "PrimaryAttribute": "QID8",
             "SecondaryAttribute": "Keuze 7 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 7</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 7</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">100%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_7",
                 "QuestionType": "MC",
@@ -1261,7 +1353,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID7",
+                "QuestionID": "QID8",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1269,13 +1361,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID8",
+            "PrimaryAttribute": "QID9",
             "SecondaryAttribute": "Keuze 8 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 8</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">66%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 8</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">0%</span></td>\n  <td><span style=\"color:#000066;\">66%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">no</span></td>\n  <td><span style=\"color:#000066;\">yes</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_8",
                 "QuestionType": "MC",
@@ -1308,7 +1400,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID8",
+                "QuestionID": "QID9",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1316,13 +1408,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID9",
+            "PrimaryAttribute": "QID10",
             "SecondaryAttribute": "Keuze 9 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 9</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">35</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">0%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 9</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">30</span></td>\n  <td><span style=\"color:#000066;\">35</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">0%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_9",
                 "QuestionType": "MC",
@@ -1355,7 +1447,7 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID9",
+                "QuestionID": "QID10",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -1363,13 +1455,13 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID10",
+            "PrimaryAttribute": "QID11",
             "SecondaryAttribute": "Keuze 10 \u00a0 Welk bedrijf heeft uw voorkeur?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 10</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">66%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table></body></html>",
+                "QuestionText": "<table style=\"width:800px;\" cellspacing=\"1\" cellpadding=\"1\" border=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"3\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze 10</strong></span></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td rowspan=\"1\" colspan=\"2\"><span style=\"color:#000066;\"><strong>Welk bedrijf heeft uw voorkeur?</strong></span></td>\n  </tr>\n  <tr>\n   <td>&#160;</td>\n   <td><span style=\"color:#000066;\"><strong>Bedrijf A</strong></span></td>\n  <td><span style=\"color:#000066;\"><strong>Bedrijf B</strong></span></td>\n  </tr>\n  <tr>\n   <td><span style=\"color:#000066;\">Price</span></td>\n   <td><span style=\"color:#000066;\">35</span></td>\n  <td><span style=\"color:#000066;\">30</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Renewable Energy</span></td>\n   <td><span style=\"color:#000066;\">33%</span></td>\n  <td><span style=\"color:#000066;\">66%</span></td>\n  </tr>\n <tr>\n   <td><span style=\"color:#000066;\">Participation</span></td>\n   <td><span style=\"color:#000066;\">yes</span></td>\n  <td><span style=\"color:#000066;\">no</span></td>\n  </tr>\n </tbody>\n</table>",
                 "DefaultChoices": false,
                 "DataExportTag": "set_10",
                 "QuestionType": "MC",
@@ -1402,11 +1494,40 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID10",
+                "QuestionID": "QID11",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
                 }
+            }
+        },
+        {
+            "SurveyID": "SV_afWJQHf3gDptwii",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID20",
+            "SecondaryAttribute": "Uw voltooingscode is:\u00a0${e://Field/completion_code}",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Uw voltooingscode is:&nbsp;<b>${e://Field/completion_code}</b>",
+                "DefaultChoices": false,
+                "DataExportTag": "Post",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Uw voltooingscode is:\u00a0${e://Field/completion_code}",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID20"
             }
         }
     ]

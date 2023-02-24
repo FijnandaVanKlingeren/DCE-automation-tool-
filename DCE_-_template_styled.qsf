@@ -1,26 +1,26 @@
 {
     "SurveyEntry": {
-        "SurveyID": "SV_55cch3rKyE5XvrU",
-        "SurveyName": "DCE - template",
+        "SurveyID": "SV_afWJQHf3gDptwii",
+        "SurveyName": "DCE styled",
         "SurveyDescription": null,
         "SurveyOwnerID": "UR_cSyTmKmUm8P7wPP",
         "SurveyBrandID": "erasmusuniversity",
         "DivisionID": null,
         "SurveyLanguage": "NL",
-        "SurveyActiveResponseSet": "RS_5zL0JqPidqOItFk",
+        "SurveyActiveResponseSet": "RS_3xG6pUME1jYkLiu",
         "SurveyStatus": "Inactive",
         "SurveyStartDate": "0000-00-00 00:00:00",
         "SurveyExpirationDate": "0000-00-00 00:00:00",
-        "SurveyCreationDate": "2022-10-27 09:14:15",
+        "SurveyCreationDate": "2023-02-24 07:08:48",
         "CreatorID": "UR_cSyTmKmUm8P7wPP",
-        "LastModified": "2022-10-27 09:28:56",
+        "LastModified": "2023-02-24 07:09:21",
         "LastAccessed": "0000-00-00 00:00:00",
         "LastActivated": "0000-00-00 00:00:00",
         "Deleted": null
     },
     "SurveyElements": [
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "BL",
             "PrimaryAttribute": "Survey Blocks",
             "SecondaryAttribute": null,
@@ -35,12 +35,24 @@
                 "2": {
                     "Type": "Standard",
                     "SubType": "",
+                    "Description": "Pre",
+                    "ID": "BL_3VnyPwqmtLCmTCm",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID1"
+                        }
+                    ]
+                },
+                "3": {
+                    "Type": "Standard",
+                    "SubType": "",
                     "Description": "Choice %set_S%",
                     "ID": "BL_cSJc3gataqM2bye",
                     "BlockElements": [
                         {
                             "Type": "Question",
-                            "QuestionID": "QID1"
+                            "QuestionID": "QID2"
                         }
                     ],
                     "Options": {
@@ -49,7 +61,7 @@
                         "BlockVisibility": "Expanded"
                     }
                 },
-                "3": {
+                "4": {
                     "Type": "Standard",
                     "SubType": "",
                     "Description": "Extra %extra_text_E%",
@@ -57,11 +69,11 @@
                     "BlockElements": [
                         {
                             "Type": "Question",
-                            "QuestionID": "QID2"
+                            "QuestionID": "QID3"
                         }
                     ]
                 },
-                "4": {
+                "5": {
                     "Type": "Standard",
                     "SubType": "",
                     "Description": "Extra %extra_multi_E%",
@@ -69,14 +81,26 @@
                     "BlockElements": [
                         {
                             "Type": "Question",
-                            "QuestionID": "QID3"
+                            "QuestionID": "QID4"
+                        }
+                    ]
+                },
+                "6": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Post",
+                    "ID": "BL_3f3RkG9hCtopfg2",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID5"
                         }
                     ]
                 }
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "FL",
             "PrimaryAttribute": "Survey Flow",
             "SecondaryAttribute": null,
@@ -86,41 +110,74 @@
                 "FlowID": "FL_1",
                 "Flow": [
                     {
-                        "Type": "Standard",
-                        "ID": "BL_cSJc3gataqM2bye",
+                        "Type": "EmbeddedData",
                         "FlowID": "FL_2",
+                        "EmbeddedData": [
+                            {
+                                "Description": "completion_code",
+                                "Type": "Custom",
+                                "Field": "completion_code",
+                                "VariableType": "String",
+                                "DataVisibility": [],
+                                "AnalyzeText": false,
+                                "Value": "${rand://int/10000000:99999999}"
+                            }
+                        ]
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_3VnyPwqmtLCmTCm",
+                        "FlowID": "FL_3",
                         "Autofill": []
                     },
                     {
-                        "ID": "BL_ahr9uJfq7OGCr3w",
                         "Type": "Standard",
-                        "FlowID": "FL_3"
+                        "ID": "BL_cSJc3gataqM2bye",
+                        "FlowID": "FL_4",
+                        "Autofill": []
                     },
                     {
-                        "ID": "BL_ePrpiLTktSOJAyO",
                         "Type": "Standard",
-                        "FlowID": "FL_4"
+                        "ID": "BL_ahr9uJfq7OGCr3w",
+                        "FlowID": "FL_5",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_ePrpiLTktSOJAyO",
+                        "FlowID": "FL_6",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_3f3RkG9hCtopfg2",
+                        "FlowID": "FL_7",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "EndSurvey",
+                        "FlowID": "FL_8"
                     }
                 ],
                 "Properties": {
-                    "Count": 4,
+                    "Count": 8,
                     "RemovedFieldsets": []
                 }
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "PL",
             "PrimaryAttribute": "Preview Link",
             "SecondaryAttribute": null,
             "TertiaryAttribute": null,
             "Payload": {
                 "PreviewType": "Brand",
-                "PreviewID": "88ea33cc-b963-4c43-8052-81dc831564ec"
+                "PreviewID": "106d2bb4-9993-4df4-b764-4aba7e104b85"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SO",
             "PrimaryAttribute": "Survey Options",
             "SecondaryAttribute": null,
@@ -201,7 +258,7 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SCO",
             "PrimaryAttribute": "Scoring",
             "SecondaryAttribute": null,
@@ -217,7 +274,7 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "PROJ",
             "PrimaryAttribute": "CORE",
             "SecondaryAttribute": null,
@@ -228,7 +285,7 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "STAT",
             "PrimaryAttribute": "Survey Statistics",
             "SecondaryAttribute": null,
@@ -239,9 +296,9 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID2",
+            "PrimaryAttribute": "QID3",
             "SecondaryAttribute": "%extra_text_E%",
             "TertiaryAttribute": null,
             "Payload": {
@@ -267,13 +324,13 @@
                 "SearchSource": {
                     "AllowFreeResponse": "false"
                 },
-                "QuestionID": "QID2"
+                "QuestionID": "QID3"
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
-            "PrimaryAttribute": "QID3",
+            "PrimaryAttribute": "QID4",
             "SecondaryAttribute": "%extra_multi_E%",
             "TertiaryAttribute": null,
             "Payload": {
@@ -306,7 +363,7 @@
                 "NextAnswerId": 1,
                 "QuestionText_Unsafe": "%extra_question_E%",
                 "DataExportTag": "%extra_label_E%",
-                "QuestionID": "QID3",
+                "QuestionID": "QID4",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
@@ -314,25 +371,54 @@
             }
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "QC",
             "PrimaryAttribute": "Survey Question Count",
-            "SecondaryAttribute": "3",
+            "SecondaryAttribute": "5",
             "TertiaryAttribute": null,
             "Payload": null
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "RS",
-            "PrimaryAttribute": "RS_5zL0JqPidqOItFk",
+            "PrimaryAttribute": "RS_3xG6pUME1jYkLiu",
             "SecondaryAttribute": "Default Response Set",
             "TertiaryAttribute": null,
             "Payload": null
         },
         {
-            "SurveyID": "SV_55cch3rKyE5XvrU",
+            "SurveyID": "SV_afWJQHf3gDptwii",
             "Element": "SQ",
             "PrimaryAttribute": "QID1",
+            "SecondaryAttribute": "Instructies Uitnodiging ledenonderzoek Hierbij nodigen de onderzoekers van de Erasmus Universitei...",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "<h2>Instructies</h2><div><br></div>\n\n<h3>Uitnodiging ledenonderzoek</h3>\nHierbij nodigen de onderzoekers van de Erasmus Universiteit van Rotterdam u uit om mee te doen aan dit anonieme onderzoek. Dankzij uw deelname geeft u ons inzicht in de motivaties van leden van een energieco\u00f6peratie, zoals u. In het onderzoek krijgt u 14 keuzes voorgelegd. U moet telkens kiezen tussen twee beschreven energiebedrijven met verschillende eigenschappen. Het onderzoek duurt ongeveer 12 minuten. Denk rustig na over uw antwoord, u kunt niet terug naar de vorige vraag.\n\n<br><br><h3>Deelnemers rechten: Toestemming en terugtrekking</h3>\nDeelname aan dit onderzoek is volledig vrijwillig en anoniem. Op geen enkel moment hebben de onderzoekers toegang tot identificeerbare informatie over u. U stemt in met deelname door het onderzoek in te vullen tot op het einde. Als u eerst mee wil doen en u zich later bedenkt, kunt u uw internet tabblad gewoon sluiten. Onvoltooide vragenlijsten worden niet verwerkt. Als u het onderzoek voltooid heeft en u zich daarna bedenkt, kunt u hier een e-mail over sturen naar uw burgercollectief. Vermeld daarin de datum van deelname en uw voltooiingscode (die krijgt u te zien op het laatste scherm). Uw data wordt dan verwijderd.\n\n<br><br><h3>Privacy en vertrouwelijkheid</h3>\nTijdens het onderzoek hebben slechts de hoofdonderzoekers toegang tot de data. Een rapport over de resultaten zal via uw burgercollectief gepubliceerd worden na afronding van het onderzoek.",
+                "DefaultChoices": false,
+                "DataExportTag": "Pre",
+                "QuestionID": "QID1",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Instructies Uitnodiging ledenonderzoek Hierbij nodigen de onderzoekers van de Erasmus Universitei...",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1
+            }
+        },
+        {
+            "SurveyID": "SV_afWJQHf3gDptwii",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID2",
             "SecondaryAttribute": "Keuze %set_S% \u00a0 %main_label%",
             "TertiaryAttribute": null,
             "Payload": {
@@ -365,11 +451,40 @@
                 "Language": [],
                 "NextChoiceId": 2,
                 "NextAnswerId": 1,
-                "QuestionID": "QID1",
+                "QuestionID": "QID2",
                 "DataVisibility": {
                     "Private": false,
                     "Hidden": false
                 }
+            }
+        },
+        {
+            "SurveyID": "SV_afWJQHf3gDptwii",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID5",
+            "SecondaryAttribute": "Uw voltooingscode is:\u00a0${e://Field/completion_code}",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Uw voltooingscode is:&nbsp;<b>${e://Field/completion_code}</b>",
+                "DefaultChoices": false,
+                "DataExportTag": "Post",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Uw voltooingscode is:\u00a0${e://Field/completion_code}",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID5"
             }
         }
     ]

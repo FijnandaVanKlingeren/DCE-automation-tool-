@@ -158,11 +158,15 @@ def main():
     blocks = tuple(b[1] for b in blocks)
     new_blocks = list()
 
+    pre_block_index = []
+    pre_block = None
     set_block_index = []
     set_block = None
     extra_block_index = []
     extra_text_block = None
     extra_multi_block = None
+    post_block_index = []
+    post_block = None
     for i, block in enumerate(blocks):
         if i == 0:
             assert block['Type'] == 'Trash'
@@ -170,7 +174,11 @@ def main():
             assert block['Type'] == 'Standard'
 
             description = block['Description']
-            if '%set_S%' in description:
+            if 'Pre' == description:
+                pre_block_index.append(i)
+                pre_block = deepcopy(block)
+
+            elif '%set_S%' in description:
                 set_block_index.append(i)
                 set_block = deepcopy(block)
 
@@ -188,14 +196,21 @@ def main():
                     f"The template block with multi extra must have one question"
                 assert extra_multi_block['BlockElements'][0]['Type'] == 'Question'
 
+            elif 'Post' == description:
+                post_block_index.append(i)
+                post_block = deepcopy(block)
+
+    assert len(pre_block_index) == 1, "Expected a single block with Pre"
     assert len(set_block_index) == 1, "Expected a single block with %set_S%"
     assert len(extra_block_index) == 2, "Expected two blocks with %extra_..._E%"
+    assert len(post_block_index) == 1, "Expected a single block with Post"
     extra_done = False
 
     sorted_block_ids = list()
 
     for i, block in enumerate(blocks):
         if i == 0:
+            assert block['Type'] == 'Trash'
             new_block = deepcopy(block)
             new_blocks.append(new_block)
             sorted_block_ids.append(new_block['ID'])
@@ -250,6 +265,7 @@ def main():
                     new_blocks.append(new_block)
 
             else:
+                assert i in pre_block_index or i in post_block_index
                 new_block = deepcopy(block)
                 for element in new_block['BlockElements']:
                     old_qid = element['QuestionID']
@@ -280,9 +296,14 @@ def main():
     # assert flows[0]['Payload']['Properties']['Count'] == len(flows[0]['Payload']['Flow'])
     flows = flows[0]['Payload']['Flow']
     new_flows = list()
+
+    embedded = list()
+    endsurvey = list()
+
     for flow in flows:
-        assert flow['Type'] == 'Standard'
-        old_block_id = flow['ID']
+        flow_type = flow['Type']
+        assert flow_type in ('Standard', 'EmbeddedData', 'EndSurvey')
+        old_block_id = flow.get('ID')
         if old_block_id in block_ids:
             for new_block_id in block_ids[old_block_id]:
                 new_flow = deepcopy(flow)
@@ -301,15 +322,26 @@ def main():
             new_flow_id = 'FL_' + str(flow_count)
             flow_ids[old_flow_id] = new_flow_id
             flow['FlowID'] = new_flow_id
-            if new_flow['ID'] in sorted_block_ids:
+            if new_flow.get('ID') in sorted_block_ids:
                 new_flows.append(new_flow)
+            elif flow_type == 'EmbeddedData':
+                embedded.append(new_flow)
+            elif flow_type == 'EndSurvey':
+                endsurvey.append(new_flow)
+            else:
+                assert False, "Should not get here!"
+
+    assert len(endsurvey) == 1, "Can't have multiple end of surveys!"
 
     new_flows.sort(key=lambda flow: sorted_block_ids.index(flow['ID']))
+    new_flows = embedded + new_flows + endsurvey
+    for i, new_flow in enumerate(new_flows, 2):
+        new_flow['FlowID'] = f'FL_{i}'
 
     for i, element in enumerate(template['SurveyElements']):
         if element['Element'] == 'FL':
             template['SurveyElements'][i]['Payload']['Flow'] = new_flows
-            template['SurveyElements'][i]['Payload']['Properties']['Count'] = len(new_flows)
+            template['SurveyElements'][i]['Payload']['Properties']['Count'] = len(new_flows) + 1
 
     # Re-number all the non-template questions
     for question in template['SurveyElements']:
@@ -449,11 +481,13 @@ def main():
     question_text_index = -1
     question_multi_index = -1
     for i, question in enumerate(template['SurveyElements']):
+        if question['Element'] !='SQ':
+            continue
         description = question['SecondaryAttribute']
-        if question['Element'] == 'SQ' and '%extra_text_E%' in description:
+        if '%extra_text_E%' in description:
             assert question_text_index == -1, "Expected only a single extra text question"
             question_text_index = i
-        elif question['Element'] == 'SQ' and '%extra_multi_E%' in description:
+        elif '%extra_multi_E%' in description:
             assert question_multi_index == -1, "Expected only a single extra multi question"
             question_multi_index = i
 

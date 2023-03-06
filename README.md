@@ -14,3 +14,5 @@ Make sure to have all python related files in the same project folder when worki
 3. 'DCE_automation_step3_RMarkdown_results_generation_21022023' is RMarkdown code that transforms the results of the Qualtrics survey (the survey that was created in previous steps) into a research report. Make sure to fill in all the paths to the right files (orthogonal array, intake data, and collectieve kracht logo)
 
 4. 'Researcher_Manual_DCE' is a pdf file serving as a sort of manual for the researcher who wants to use the DCE tool, including information on the DCE method itself as well as the process of using the R and Python files to create and analyse the DCE for citizen collectives. 
+
+5. 'Wat is een Discrete Keuze Experiment' is a pdf file with explanation (in Dutch) and examples of a Discrete Choice Experiment, which may be shared with prospective citizen collectives who consider a DCE. 

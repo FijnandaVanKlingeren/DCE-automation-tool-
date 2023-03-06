@@ -348,8 +348,7 @@ def main():
         description = question['SecondaryAttribute']
         if question['Element'] == 'SQ' \
             and '%set_S%' not in description \
-            and '%extra_text_E%' not in description \
-            and '%extra_multi_E%' not in description:
+            and '%extra_label_E%' not in description:
             qid = qids[question['PrimaryAttribute']].popleft()
             question['PrimaryAttribute'] = qid
             payload = question['Payload']
@@ -481,15 +480,17 @@ def main():
     question_text_index = -1
     question_multi_index = -1
     for i, question in enumerate(template['SurveyElements']):
-        if question['Element'] !='SQ':
+        if question['Element'] !='SQ' or '%extra_label_E%' not in question['SecondaryAttribute']:
             continue
-        description = question['SecondaryAttribute']
-        if '%extra_text_E%' in description:
+        qtype = question['Payload']['QuestionType']
+        if qtype == 'TE':
             assert question_text_index == -1, "Expected only a single extra text question"
             question_text_index = i
-        elif '%extra_multi_E%' in description:
+        elif qtype == 'MC':
             assert question_multi_index == -1, "Expected only a single extra multi question"
             question_multi_index = i
+        else:
+            assert False, "Expected TE or MC type for extra question"
 
     new_text_questions = list()
     new_multi_questions = list()

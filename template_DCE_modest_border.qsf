@@ -1,0 +1,495 @@
+{
+    "SurveyEntry": {
+        "SurveyID": "SV_cUQB8XPSBqEyClo",
+        "SurveyName": "template_DCE",
+        "SurveyDescription": null,
+        "SurveyOwnerID": "UR_cSyTmKmUm8P7wPP",
+        "SurveyBrandID": "erasmusuniversity",
+        "DivisionID": null,
+        "SurveyLanguage": "NL",
+        "SurveyActiveResponseSet": "RS_2mXHliQFR9UErwG",
+        "SurveyStatus": "Inactive",
+        "SurveyStartDate": "0000-00-00 00:00:00",
+        "SurveyExpirationDate": "0000-00-00 00:00:00",
+        "SurveyCreationDate": "2023-03-01 08:24:21",
+        "CreatorID": "UR_cSyTmKmUm8P7wPP",
+        "LastModified": "2023-03-01 09:01:01",
+        "LastAccessed": "0000-00-00 00:00:00",
+        "LastActivated": "0000-00-00 00:00:00",
+        "Deleted": null
+    },
+    "SurveyElements": [
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "BL",
+            "PrimaryAttribute": "Survey Blocks",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "1": {
+                    "Type": "Trash",
+                    "Description": "Trash / Unused Questions",
+                    "ID": "BL_40CSynwbqkaKpNQ",
+                    "BlockElements": []
+                },
+                "2": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Pre",
+                    "ID": "BL_3VnyPwqmtLCmTCm",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID1"
+                        }
+                    ]
+                },
+                "3": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Choice %set_S%",
+                    "ID": "BL_cSJc3gataqM2bye",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID2"
+                        }
+                    ],
+                    "Options": {
+                        "BlockLocking": "false",
+                        "RandomizeQuestions": "false",
+                        "BlockVisibility": "Expanded"
+                    }
+                },
+                "4": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Extra %extra_text_E%",
+                    "ID": "BL_ahr9uJfq7OGCr3w",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID3"
+                        }
+                    ]
+                },
+                "5": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Extra %extra_multi_E%",
+                    "ID": "BL_ePrpiLTktSOJAyO",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID4"
+                        }
+                    ]
+                },
+                "6": {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Post",
+                    "ID": "BL_3f3RkG9hCtopfg2",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID5"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "FL",
+            "PrimaryAttribute": "Survey Flow",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "Type": "Root",
+                "FlowID": "FL_1",
+                "Flow": [
+                    {
+                        "Type": "EmbeddedData",
+                        "FlowID": "FL_2",
+                        "EmbeddedData": [
+                            {
+                                "Description": "completion_code",
+                                "Type": "Custom",
+                                "Field": "completion_code",
+                                "VariableType": "String",
+                                "DataVisibility": [],
+                                "AnalyzeText": false,
+                                "Value": "${rand://int/10000000:99999999}"
+                            }
+                        ]
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_3VnyPwqmtLCmTCm",
+                        "FlowID": "FL_3",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_cSJc3gataqM2bye",
+                        "FlowID": "FL_4",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_ahr9uJfq7OGCr3w",
+                        "FlowID": "FL_5",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_ePrpiLTktSOJAyO",
+                        "FlowID": "FL_6",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "Standard",
+                        "ID": "BL_3f3RkG9hCtopfg2",
+                        "FlowID": "FL_7",
+                        "Autofill": []
+                    },
+                    {
+                        "Type": "EndSurvey",
+                        "FlowID": "FL_8"
+                    }
+                ],
+                "Properties": {
+                    "Count": 8,
+                    "RemovedFieldsets": []
+                }
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "PL",
+            "PrimaryAttribute": "Preview Link",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "PreviewType": "Brand",
+                "PreviewID": "1389d8c9-4d57-46ab-bea6-ce82fddb768f"
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SO",
+            "PrimaryAttribute": "Survey Options",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "BackButton": "false",
+                "SaveAndContinue": "true",
+                "SurveyProtection": "PublicSurvey",
+                "BallotBoxStuffingPrevention": "true",
+                "NoIndex": "Yes",
+                "SecureResponseFiles": "true",
+                "SurveyExpiration": "None",
+                "SurveyTermination": "DisplayMessage",
+                "Header": "<img src=\"https://erasmusuniversity.eu.qualtrics.com/CP/Graphic.php?IM=IM_73C9QVvAXbiqQYe\" style=\"width: 1920px; height: 200px;\" />",
+                "Footer": "<img src=\"https://erasmusuniversity.eu.qualtrics.com/CP/Graphic.php?IM=IM_73C9QVvAXbiqQYe\" style=\"width: 1920px; height: 200px;\" />",
+                "ProgressBarDisplay": "None",
+                "PartialData": "+6 month",
+                "ValidationMessage": null,
+                "PreviousButton": "Vorige",
+                "NextButton": "Volgende",
+                "SurveyTitle": "RSM research energy cooperatives",
+                "SkinLibrary": "erasmusuniversity",
+                "SkinType": "templated",
+                "Skin": {
+                    "brandingId": null,
+                    "templateId": "*modern",
+                    "overrides": {
+                        "colors": {
+                            "primary": "#ff5900",
+                            "secondary": "#0040e7"
+                        },
+                        "contrast": 1,
+                        "layout": {
+                            "spacing": 0
+                        },
+                        "questionText": {
+                            "size": "16px"
+                        },
+                        "answerText": {
+                            "size": "14px"
+                        },
+                        "logo": {
+                            "url": "https://erasmusuniversity.eu.qualtrics.com/CP/Graphic.php?IM=IM_5hIPnniO6Nk4gD4"
+                        }
+                    }
+                },
+                "NewScoring": 1,
+                "CustomStyles": {
+                    "customCSS": "@font-face {\n   font-family: Montserrat;\n   src: url(Montserrat-Regular.otf);\n}\n\n@font-face {\n   font-family: Montserrat;\n   src: url(Montserrat-Regular.otf);\n   font-weight: bold;\n}\n\n"
+                },
+                "EOSMessage": "MS_0eLjarMbmkzykOG",
+                "ShowExportTags": "false",
+                "CollectGeoLocation": "false",
+                "SurveyMetaDescription": "This study researches the preferences and motivations of energy cooperative members. ",
+                "PasswordProtection": "No",
+                "AnonymizeResponse": "Yes",
+                "RefererCheck": "No",
+                "UseCustomSurveyLinkCompletedMessage": null,
+                "SurveyLinkCompletedMessage": null,
+                "SurveyLinkCompletedMessageLibrary": null,
+                "ResponseSummary": "No",
+                "EOSMessageLibrary": "UR_cSyTmKmUm8P7wPP",
+                "EOSRedirectURL": "http://",
+                "EmailThankYou": "false",
+                "ThankYouEmailMessageLibrary": null,
+                "ThankYouEmailMessage": null,
+                "ValidateMessage": "false",
+                "ValidationMessageLibrary": null,
+                "InactiveSurvey": "DefaultMessage",
+                "PartialDeletion": null,
+                "PartialDataCloseAfter": "LastActivity",
+                "InactiveMessageLibrary": null,
+                "InactiveMessage": null,
+                "AvailableLanguages": {
+                    "NL": []
+                },
+                "ProtectSelectionIds": true
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SCO",
+            "PrimaryAttribute": "Scoring",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "ScoringCategories": [],
+                "ScoringCategoryGroups": [],
+                "ScoringSummaryCategory": null,
+                "ScoringSummaryAfterQuestions": 0,
+                "ScoringSummaryAfterSurvey": 0,
+                "DefaultScoringCategory": null,
+                "AutoScoringCategory": null
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "PROJ",
+            "PrimaryAttribute": "CORE",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": "1.1.0",
+            "Payload": {
+                "ProjectCategory": "CORE",
+                "SchemaVersion": "1.1.0"
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "STAT",
+            "PrimaryAttribute": "Survey Statistics",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "MobileCompatible": true,
+                "ID": "Survey Statistics"
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID3",
+            "SecondaryAttribute": "%extra_label_E%",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "%extra_question_E%",
+                "DefaultChoices": false,
+                "DataExportTag": "%extra_label_E%",
+                "QuestionType": "TE",
+                "Selector": "SL",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "%extra_label_E%",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "SearchSource": {
+                    "AllowFreeResponse": "false"
+                },
+                "QuestionID": "QID3"
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID4",
+            "SecondaryAttribute": "%extra_label_E%",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "%extra_question_E%",
+                "DefaultChoices": false,
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "SubSelector": "TX",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "%extra_label_E%",
+                "Choices": {
+                    "1": {
+                        "Display": "%extra_E_answer_Z%"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1"
+                ],
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionText_Unsafe": "%extra_question_E%",
+                "DataExportTag": "%extra_label_E%",
+                "QuestionID": "QID4",
+                "DataVisibility": {
+                    "Private": false,
+                    "Hidden": false
+                }
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "QC",
+            "PrimaryAttribute": "Survey Question Count",
+            "SecondaryAttribute": "5",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "RS",
+            "PrimaryAttribute": "RS_2mXHliQFR9UErwG",
+            "SecondaryAttribute": "Default Response Set",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID1",
+            "SecondaryAttribute": "Instructies \u00a0 Uitnodiging ledenonderzoek Hierbij nodigen de onderzoekers van Collectieve Kracht e..",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "<h2>Instructies</h2>\n\n<div>&nbsp;</div>\n\n<h3>Uitnodiging ledenonderzoek</h3>\nHierbij nodigen de onderzoekers van Collectieve Kracht en de Erasmus Universiteit van Rotterdam u uit om mee te doen aan dit anonieme onderzoek. Dankzij uw deelname geeft u ons inzicht in de motivaties van leden van een energieco&ouml;peratie, zoals u. In het onderzoek krijgt u 14 keuzes voorgelegd. U moet telkens kiezen tussen twee beschreven energiebedrijven met verschillende eigenschappen. Het onderzoek duurt ongeveer 12 minuten. Denk rustig na over uw antwoord, u kunt niet terug naar de vorige vraag.<br />\n&nbsp;\n<h3>Deelnemers rechten: Toestemming en terugtrekking</h3>\nDeelname aan dit onderzoek is volledig vrijwillig en anoniem. Op geen enkel moment hebben de onderzoekers toegang tot identificeerbare informatie over u. U stemt in met deelname door het onderzoek in te vullen tot op het einde. Als u eerst mee wil doen en u zich later bedenkt, kunt u uw internet tabblad gewoon sluiten. Onvoltooide vragenlijsten worden niet verwerkt. Als u het onderzoek voltooid heeft en u zich daarna bedenkt, kunt u hier een e-mail over sturen naar uw burgercollectief. Vermeld daarin de datum van deelname en uw voltooiingscode (die krijgt u te zien op het laatste scherm). Uw data wordt dan verwijderd.<br />\n&nbsp;\n<h3>Privacy en vertrouwelijkheid</h3>\nTijdens het onderzoek hebben slechts de hoofdonderzoekers toegang tot de data. Een rapport over de resultaten zal via uw burgercollectief gepubliceerd worden na afronding van het onderzoek.",
+                "DefaultChoices": false,
+                "DataExportTag": "Pre",
+                "QuestionID": "QID1",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Instructies \u00a0 Uitnodiging ledenonderzoek Hierbij nodigen de onderzoekers van Collectieve Kracht e...",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "DataVisibility": {
+                    "Private": false,
+                    "Hidden": false
+                }
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID2",
+            "SecondaryAttribute": "Keuze %set_S% \u00a0 %main_label% \u00a0 %column_label_X% %row_label_Y% %row_value_X%",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "<table style=\"width:100%;border:1px solid #888;border-collapse: collapse;\" cellspacing=\"1\" cellpadding=\"1\" align=\"left\">\n <tbody>\n  <tr>\n   <td colspan=\"2\" style=\"border:1px solid #888;border-collapse: collapse;\"><span style=\"font-size:19px;\"><span style=\"color:#000066;\"><strong>Keuze %set_S%</strong></span></span></td>\n  </tr>\n  <tr>\n   <td style=\"border:1px solid #888;border-collapse: collapse;\">&nbsp;</td>\n   <td rowspan=\"1\" colspan=\"1\" style=\"border:1px solid #888;border-collapse: collapse;\"><span style=\"color:#000066;\"><strong>%main_label%</strong></span></td>\n  </tr>\n  <tr>\n   <td style=\"border:1px solid #888;border-collapse: collapse;\">&nbsp;</td>\n   <td style=\"border:1px solid #888;border-collapse: collapse;\"><span style=\"color:#000066;\"><strong>%column_label_X%</strong></span></td>\n  </tr>\n  <tr>\n   <td style=\"border:1px solid #888;border-collapse: collapse;\"><span style=\"color:#000066;\">%row_label_Y%</span></td>\n   <td style=\"border:1px solid #888;border-collapse: collapse;\"><span style=\"color:#000066;\">%row_value_X%</span></td>\n  </tr>\n </tbody>\n</table>",
+                "DefaultChoices": false,
+                "DataExportTag": "set_%set_S%",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "SubSelector": "TX",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Keuze %set_S% \u00a0 %main_label% \u00a0 %column_label_X% %row_label_Y% %row_value_X%",
+                "Choices": {
+                    "1": {
+                        "Display": "%column_label_X%"
+                    }
+                },
+                "ChoiceOrder": [
+                    1
+                ],
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "ON",
+                        "ForceResponseType": "ON",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 2,
+                "NextAnswerId": 1,
+                "QuestionID": "QID2",
+                "DataVisibility": {
+                    "Private": false,
+                    "Hidden": false
+                }
+            }
+        },
+        {
+            "SurveyID": "SV_cUQB8XPSBqEyClo",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID5",
+            "SecondaryAttribute": "Uw voltooingscode is:\u00a0${e://Field/completion_code}",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Uw voltooingscode is:&nbsp;<b>${e://Field/completion_code}</b>",
+                "DefaultChoices": false,
+                "DataExportTag": "Post",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Uw voltooingscode is:\u00a0${e://Field/completion_code}",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID5"
+            }
+        }
+    ]
+}
